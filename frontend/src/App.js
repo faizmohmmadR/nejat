@@ -1,12 +1,17 @@
 import React from "react";
 import "./App.css";
+
 import Login from "./Components/Login";
 import ContactPage from "./Components/contact";
 
+
+// import Login from "./Components/Login";
+import About from "./Components/About";
+
+import Registration from "./Components/User/Registration";
 function App() {
   return (
     <div>
-      {/* Other components */}
       <ContactPage />
     </div>
   );
