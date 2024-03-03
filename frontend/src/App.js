@@ -1,17 +1,12 @@
 import React from "react";
 import "./App.css";
+import Navbar from "./Components/Navbar";
 
-import ContactPage from "./Components/contact";
-
-// import Login from "./Components/Login";
-import About from "./Components/About";
-
-import Registration from "./Components/User/Registration";
 function App() {
   return (
-    <div>
-      <ContactPage />
-    </div>
+    <React.Fragment>
+      <Navbar />
+    </React.Fragment>
   );
 }
 
