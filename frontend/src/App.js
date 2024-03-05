@@ -1,10 +1,14 @@
 import React from "react";
+import Footer from "./Components/Footer/Footer";
 import "./App.css";
-import Contact from "./Components/contact";
+import Navbar from "./Components/Layout/Navbar";
+import { Outlet } from "react-router-dom";
+
 function App() {
   return (
     <div>
-      <Contact></Contact>
+      <Navbar />
+      <Outlet />
     </div>
   );
 }
