@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import Navbar from "./Components/Navbar";
+
 
 
 import ContactPage from "./Components/contact";
@@ -14,9 +16,9 @@ import ContactPage from "./Components/contact";
 
 function App() {
   return (
-    <div>
-      <ContactPage />
-    </div>
+    <React.Fragment>
+      <Navbar />
+    </React.Fragment>
   );
 }
 
