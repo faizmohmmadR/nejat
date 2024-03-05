@@ -1,5 +1,6 @@
 import React from "react";
 import { Grid, Typography } from "@mui/material";
+import { Outlet } from "react-router-dom";
 
 function About() {
   return (
@@ -38,13 +39,13 @@ function About() {
             color: "white",
             textAlign: "center",
             padding: "6em",
-            textTransform:"capitalize",
+            textTransform: "capitalize",
           }}
         >
           About Us
         </Typography>
       </Grid>
-
+      <Outlet />
       <Grid
         container
         gap={2}
@@ -71,7 +72,7 @@ function About() {
               boxShadow: "0px 0px 10px #333",
               padding: "10px",
               minHeight: "100%",
-              textAlign:"justify"
+              textAlign: "justify",
             }}
           >
             Natural disasters are catastrophic events that occur as a result of
@@ -100,5 +101,3 @@ function About() {
 }
 
 export default About;
-
-
