@@ -1,107 +1,93 @@
-import React from "react";
+import {
+  Typography,
+  Card,
+  CardContent,
+  Grid,
+  TextField,
+  Button,
+} from "@mui/material";
 
-function ContactPage() {
+function Contact() {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "center",
-        height: "100vh",
-        borderRadius: "5px",
-        backgroundColor: "#f2f2f2",
-        padding: "20px",
-        fontFamily: "Arial, Helvetica, sans-serif",
-      }}
-    >
-      <h1 style={{ fontSize: "24px", marginBottom: "20px" }}>Contact Us</h1>
-      <form
-        style={{
-          width: "600px",
-          border: "1px solid #ccc",
-          fontSize: "16px",
-          fontWeight: "bold",
-          padding: "45px",
-          margin: "14px",
-          borderRadius: "5px",
-          height: "500px",
-          boxShadow: "0px 15px 17px rgba(0, 0, 0, 0.1)", // Add box shadow to the form
-        }}
-      >
-        <div style={{ marginBottom: "15px" }}>
-          <label
-            htmlFor="name"
-            style={{ fontWeight: "bold", marginBottom: "5px" }}
+    <div>
+      <Card style={{ maxWidth: 570, margin: "0 auto", padding: "20px 5px" }}>
+        <CardContent>
+          <Typography
+            variant="h5"
+            style={{ textAlign: "center", padding: "24px 0" }}
           >
-            Name:
-          </label>
-          <input
-            type="text"
-            id="name"
-            style={{
-              width: "85%",
-              padding: "8px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              fontSize: "14px", // Decrease the font size for small input field
-            }}
-          />
-        </div>
-        <div style={{ marginBottom: "15px" }}>
-          <label
-            htmlFor="email"
-            style={{ fontWeight: "bold", marginBottom: "5px" }}
+            Contact Us
+          </Typography>
+          <Typography
+            variant="body2"
+            gutterBottom
+            color="textsecondry"
+            component="p"
           >
-            Email:
-          </label>
-          <input
-            type="email"
-            id="email"
-            style={{
-              width: "85%",
-              padding: "8px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              fontSize: "14px", // Decrease the font size for small input field
-            }}
-          />
-        </div>
-        <div style={{ marginBottom: "15px" }}>
-          <label
-            htmlFor="message"
-            style={{ fontWeight: "bold", marginBottom: "5px" }}
-          >
-            Message:
-          </label>
-          <textarea
-            id="message"
-            rows="15"
-            style={{
-              width: "100%",
-              padding: "8px",
-              border: "1px solid #ccc",
-              borderRadius: "4px",
-              fontSize: "14px", // Decrease the font size for small input field
-            }}
-          ></textarea>
-        </div>
-        <button
-          type="submit"
-          style={{
-            backgroundColor: "#04AA6D",
-            color: "white",
-            padding: "12px 20px",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-          }}
-        >
-          Submit
-        </button>
-      </form>
+            Fill up the form and our team will get back to you within 24 hours.
+          </Typography>
+          <form action="">
+            <Grid container spacing={1}>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="First Name"
+                  placeholder="Enter your firstname"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  label="Last Name"
+                  placeholder="Enter your Lastname"
+                  variant="outlined"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Email"
+                  placeholder="Enter your Email"
+                  variant="outlined"
+                  type="email"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Phone"
+                  placeholder="Enter your Phone Number"
+                  variant="outlined"
+                  type="phone"
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  label="Message"
+                  placeholder="Type your Message"
+                  variant="outlined"
+                  type="message"
+                  multiline
+                  rows={5}
+                  fullWidth
+                  required
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <Button variant="contained" type="submit">
+                  Submit
+                </Button>
+              </Grid>
+            </Grid>
+          </form>
+        </CardContent>
+      </Card>
     </div>
   );
 }
-
-export default ContactPage;
+export default Contact;
