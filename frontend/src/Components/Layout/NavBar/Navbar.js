@@ -1,13 +1,30 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Box, IconButton, Drawer, List, ListItem, ListItemText, Divider, useMediaQuery, createTheme, ThemeProvider, TextField } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import SearchIcon from '@mui/icons-material/Search';
+import React from "react";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  IconButton,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Divider,
+  useMediaQuery,
+  createTheme,
+  ThemeProvider,
+  TextField,
+} from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import SearchIcon from "@mui/icons-material/Search";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const theme = createTheme();
-  const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
-
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+  const navigate = useNavigate();
   const handleDrawerOpen = () => {
     setIsDrawerOpen(true);
   };
@@ -19,7 +36,7 @@ const Navbar = () => {
   const handleSearch = (event) => {
     // Handle search functionality here
     const searchTerm = event.target.value;
-    console.log('Search term:', searchTerm);
+    console.log("Search term:", searchTerm);
   };
 
   return (
@@ -41,7 +58,7 @@ const Navbar = () => {
               <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                 Your Website Name
               </Typography>
-              <Box sx={{ display: 'flex', alignItems: 'center' }}>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
                 <TextField
                   variant="outlined"
                   size="small"
@@ -53,10 +70,38 @@ const Navbar = () => {
                   <SearchIcon />
                 </IconButton>
               </Box>
-              <Button color="inherit">Home</Button>
-              <Button color="inherit">About</Button>
-              <Button color="inherit">Services</Button>
-              <Button color="inherit">Contact</Button>
+              <Button
+                color="inherit"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Home
+              </Button>
+              <Button
+                color="inherit"
+                onClick={() => {
+                  navigate("/about");
+                }}
+              >
+                About
+              </Button>
+              <Button
+                color="inherit"
+                onClick={() => {
+                  navigate("/");
+                }}
+              >
+                Services
+              </Button>
+              <Button
+                color="inherit"
+                onClick={() => {
+                  navigate("/contact");
+                }}
+              >
+                Contact
+              </Button>
             </>
           )}
         </Toolbar>

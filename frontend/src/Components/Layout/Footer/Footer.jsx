@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Grid, Typography } from "@mui/material";
-import XIcon from "@mui/icons-material/X";
+// import XIcon from "@mui/icons-material/X";
 
 import {
   FaCopyright,
@@ -15,15 +15,14 @@ const Footer = () => {
     color: "#102354",
     fontWeight: "bold",
     fontSize: "17px",
-    marginLeft:"3em"
+    marginLeft: "3em",
   };
 
   const ContentStyle = {
     display: "flex",
     flexDirection: "column",
-    margin:"1em 0em",
-    marginLeft:"3em"
-  
+    margin: "1em 0em",
+    marginLeft: "3em",
   };
   const ElementStyle = {
     textDecoration: "none",
@@ -48,7 +47,7 @@ const Footer = () => {
   const ButtomFooterStyle = {
     textDecoration: "none",
     color: "#ffffff",
-    marginLeft:"2em",
+    marginLeft: "2em",
     "&:hover": {
       textDecoration: "underline",
     },
@@ -56,7 +55,6 @@ const Footer = () => {
   return (
     <Grid
       container
-
       sx={{
         height: "90vh",
         width: "100vw",
@@ -69,7 +67,7 @@ const Footer = () => {
         },
       }}
     >
-      <Grid container item xs={12} gap={1} sx={{ padding:'2em'}}>
+      <Grid container item xs={12} gap={1} sx={{ padding: "2em" }}>
         <Grid item xs={12} sm={5.8} md={2.8}>
           <Typography style={TitleStyle}>About Us</Typography>
           <Typography style={ContentStyle}>
@@ -148,27 +146,27 @@ const Footer = () => {
             </Link>
           </Typography>
           <Typography style={TitleStyle}>Contact Us</Typography>
-            <Typography style={ContentStyle}>
-              <Link href="#" sx={ElementStyle}>
-                Go to About Page
-              </Link>
-              <Link href="#" sx={ElementStyle}>
-                Go to About Page
-              </Link>
-            </Typography>
-            <Typography style={TitleStyle}>Professional Education</Typography>
-            <Typography style={ContentStyle}>
-              <Link href="#" sx={ElementStyle}>
-                Go to About Page
-              </Link>
-              <Link href="#" sx={ElementStyle}>
-                Go to About Page
-              </Link>
-            </Typography>
+          <Typography style={ContentStyle}>
+            <Link href="#" sx={ElementStyle}>
+              Go to About Page
+            </Link>
+            <Link href="#" sx={ElementStyle}>
+              Go to About Page
+            </Link>
+          </Typography>
+          <Typography style={TitleStyle}>Professional Education</Typography>
+          <Typography style={ContentStyle}>
+            <Link href="#" sx={ElementStyle}>
+              Go to About Page
+            </Link>
+            <Link href="#" sx={ElementStyle}>
+              Go to About Page
+            </Link>
+          </Typography>
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
           <Typography style={TitleStyle}>Commeing soon on</Typography>
-          <Typography sx={{ mt: "1em", ml:"3em"}}>
+          <Typography sx={{ mt: "1em", ml: "3em" }}>
             <Link href="#" sx={IconStyle}>
               <FaInstagramSquare />
             </Link>
@@ -176,7 +174,7 @@ const Footer = () => {
               <FaFacebook />
             </Link>
             <Link href="#" sx={IconStyle}>
-              <XIcon />
+              X
             </Link>
             <Link href="#" sx={IconStyle}>
               <FaWhatsappSquare />
@@ -186,17 +184,24 @@ const Footer = () => {
             </Link>
           </Typography>
           <Grid
-item
-          component="img" mt={8}
-          alt="Image placeholder"
-          src="../img/logo.png"
-          title="name"
-          xs={11}
-          md={12}
-        ></Grid>
+            item
+            component="img"
+            mt={8}
+            alt="Image placeholder"
+            src="../img/logo.png"
+            title="name"
+            xs={11}
+            md={12}
+          ></Grid>
         </Grid>
       </Grid>
-      <Grid container borderColor={"white"} padding={"4px"} bgcolor={"#0d2354"} sx={{alignItems:"center", textAlign:"center"}} >
+      <Grid
+        container
+        borderColor={"white"}
+        padding={"4px"}
+        bgcolor={"#0d2354"}
+        sx={{ alignItems: "center", textAlign: "center" }}
+      >
         <Grid item xs={12} md={5.8}>
           <Typography sx={{ color: "#ffffff" }}>
             <FaCopyright />
@@ -222,5 +227,3 @@ item
 };
 
 export default Footer;
-
-
