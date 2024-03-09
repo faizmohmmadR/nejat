@@ -67,7 +67,14 @@ const Footer = () => {
         },
       }}
     >
-      <Grid container item xs={12} gap={1} sx={{ padding: "2em" }}>
+      <Grid
+        container
+        maxWidth="xl"
+        item
+        xs={12}
+        gap={1}
+        sx={{ padding: "2em" }}
+      >
         <Grid item xs={12} sm={5.8} md={2.8}>
           <Typography style={TitleStyle}>About Us</Typography>
           <Typography style={ContentStyle}>
