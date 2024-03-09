@@ -19,14 +19,18 @@ function Contact() {
         gap: "20px",
       }}
     >
-      <Grid className="image">
+      <Grid className="image" xs={12} ms={4} md={6} padding={4}>
         <img
           src={myimage}
           alt=""
-          style={{ width: "100%", height: "auto", marginTop: "140px" }}
+          style={{ width: "100%", height: "35em", marginTop: "83px" }}
         />
       </Grid>
-      <Grid className="form" style={{ width: "300rem", marginTop: "90px" }}>
+      <Grid
+        className="form"
+        style={{ width: "80%", marginTop: "83px" }}
+        padding={4}
+      >
         <Card
           style={{
             margin: "0 auto",
