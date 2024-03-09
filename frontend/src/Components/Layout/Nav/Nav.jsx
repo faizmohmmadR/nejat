@@ -80,12 +80,12 @@ const Nav = () => {
       <Grid
         container
         color={"white"}
-        height="12svh"
         sx={{
           background: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))",
           position: "sticky",
           top: "0px",
           display: { xs: "block", md: "none" },
+          height: { xs: "8svh", sm: "12svh" },
         }}
       >
         <Grid
@@ -123,7 +123,7 @@ const Nav = () => {
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "40vw" }}
         >
           {" "}
           <NavLink to="/">Home</NavLink>
@@ -133,7 +133,7 @@ const Nav = () => {
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "40vw" }}
         >
           {" "}
           <NavLink to="/about">About</NavLink>
@@ -143,7 +143,7 @@ const Nav = () => {
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "40vw" }}
         >
           {" "}
           <NavLink to="/contact">Contact</NavLink>
@@ -153,7 +153,7 @@ const Nav = () => {
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "40vw" }}
         >
           {" "}
           <NavLink>Services</NavLink>
