@@ -1,15 +1,17 @@
 import React from "react";
+import Footer from "./Components/Layout/Footer/Footer";
 import "./App.css";
-import Login from "./Components/Login";
-
+import { Outlet } from "react-router-dom";
+import { Grid } from "@mui/material";
+import Nav from "./Components/Layout/Nav/Nav";
 
 function App() {
   return (
-    <div>
-      {/* <h1>  Hi Nejat!</h1> */}
-       <Login/>
-    </div>
-
+    <Grid maxWidth="xl" margin="0px auto" container>
+      <Nav />
+      <Outlet />
+      <Footer />
+    </Grid>
   );
 }
 
