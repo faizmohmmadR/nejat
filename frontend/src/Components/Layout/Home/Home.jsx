@@ -1,5 +1,6 @@
 import { Grid, Typography } from "@mui/material";
 import React from "react";
+import Services from "../Services/Services";
 
 const Home = () => {
   return (
@@ -26,6 +27,8 @@ const Home = () => {
           </Typography>
         </Grid>
       </Grid>
+
+      <Services />
       <Grid
         container
         margin="50px 0px"
@@ -39,13 +42,14 @@ const Home = () => {
         }}
       >
         <Grid
+          item
           xs={12}
           md={6}
           height="70svh"
           component="img"
           src="/img/s.jpg"
         ></Grid>
-        <Grid xs={12} md={6} padding="0px 20px">
+        <Grid item xs={12} md={6} padding="0px 20px">
           <Typography variant="h4">Flood</Typography>
 
           <Typography>
@@ -84,7 +88,7 @@ const Home = () => {
           color: "white",
         }}
       >
-        <Grid xs={12} md={6} padding="0px 20px">
+        <Grid item xs={12} md={6} padding="0px 20px">
           <Typography variant="h4">Flood</Typography>
 
           <Typography>
@@ -111,6 +115,7 @@ const Home = () => {
         </Grid>
 
         <Grid
+          item
           xs={12}
           md={6}
           height="70svh"
@@ -121,5 +126,4 @@ const Home = () => {
     </Grid>
   );
 };
-
 export default Home;
