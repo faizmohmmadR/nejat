@@ -1,28 +1,13 @@
 import React from "react";
-<<<<<<< HEAD:frontend/src/Components/Footer/Footer.jsx
 import { Link, Grid, Typography, Avatar } from "@mui/material";
-import FacebookIcon from '@mui/icons-material/Facebook';
-import XIcon from '@mui/icons-material/X';
-import InstagramIcon from '@mui/icons-material/Instagram';
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import CopyrightIcon from '@mui/icons-material/Copyright';
-=======
-import { Link, Grid, Typography } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
 // import XIcon from "@mui/icons-material/X";
-
-import {
-  FaCopyright,
-  FaFacebook,
-  FaInstagramSquare,
-  FaLinkedin,
-  FaWhatsappSquare,
-} from "react-icons/fa";
->>>>>>> main:frontend/src/Components/Layout/Footer/Footer.jsx
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import CopyrightIcon from "@mui/icons-material/Copyright";
 
 const Footer = () => {
-
-
   const TitleStyle = {
     color: "#102354",
     fontWeight: "bold",
@@ -33,13 +18,8 @@ const Footer = () => {
   const ContentStyle = {
     display: "flex",
     flexDirection: "column",
-<<<<<<< HEAD:frontend/src/Components/Footer/Footer.jsx
-    margin:"1em 0em",
-    marginLeft:"3em"
-=======
     margin: "1em 0em",
     marginLeft: "3em",
->>>>>>> main:frontend/src/Components/Layout/Footer/Footer.jsx
   };
   const ElementStyle = {
     textDecoration: "none",
@@ -59,7 +39,7 @@ const Footer = () => {
 
     "&:hover": {
       color: "white",
-      backgroundColor:"blue",
+      backgroundColor: "blue",
     },
   };
   const ButtomFooterStyle = {
@@ -191,32 +171,29 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
           <Typography style={TitleStyle}>Commeing soon on</Typography>
-<<<<<<< HEAD:frontend/src/Components/Footer/Footer.jsx
-          <Typography sx={{ mt: "1em",ml:"1em", display:"flex"}}>
+          <Typography sx={{ mt: "1em", ml: "1em", display: "flex" }}>
             <Link href="#">
-            <Avatar sx={IconStyle}><FacebookIcon/></Avatar>
-=======
-          <Typography sx={{ mt: "1em", ml: "3em" }}>
-            <Link href="#" sx={IconStyle}>
-              <FaInstagramSquare />
->>>>>>> main:frontend/src/Components/Layout/Footer/Footer.jsx
+              <Avatar sx={IconStyle}>
+                <FacebookIcon />
+              </Avatar>
             </Link>
             <Link href="#">
-            <Avatar sx={IconStyle}><XIcon/></Avatar>
-            </Link>
-<<<<<<< HEAD:frontend/src/Components/Footer/Footer.jsx
-            <Link href="#">
-            <Avatar sx={IconStyle}><InstagramIcon/></Avatar>
-=======
-            <Link href="#" sx={IconStyle}>
-              X
->>>>>>> main:frontend/src/Components/Layout/Footer/Footer.jsx
+              <Avatar sx={IconStyle}>X</Avatar>
             </Link>
             <Link href="#">
-            <Avatar sx={IconStyle}><LinkedInIcon/></Avatar>
+              <Avatar sx={IconStyle}>
+                <InstagramIcon />
+              </Avatar>
             </Link>
             <Link href="#">
-            <Avatar sx={IconStyle}><GitHubIcon/></Avatar>
+              <Avatar sx={IconStyle}>
+                <LinkedInIcon />
+              </Avatar>
+            </Link>
+            <Link href="#">
+              <Avatar sx={IconStyle}>
+                <GitHubIcon />
+              </Avatar>
             </Link>
           </Typography>
           <Grid
@@ -240,7 +217,7 @@ const Footer = () => {
       >
         <Grid item xs={12} md={5.8}>
           <Typography sx={{ color: "#ffffff" }}>
-            <CopyrightIcon sx={{fontSize:"15px"}} />
+            <CopyrightIcon sx={{ fontSize: "15px" }} />
             {new Date().getFullYear()} Nejat. All right reserved.
           </Typography>
         </Grid>
