@@ -35,8 +35,6 @@ const Home = () => {
           </Typography>
         </Grid>
       </Grid>
-
-      <Services />
       <Grid container justifyContent="center" gap={5} margin={"50px 0px"}>
         <Grid item lg={12} textAlign={"center"}>
           <Box
@@ -123,6 +121,7 @@ const Home = () => {
           </Button>
         </Grid>
       </Grid>
+      <Services />
     </Grid>
   );
 };
