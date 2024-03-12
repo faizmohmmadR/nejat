@@ -8,7 +8,7 @@ import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
 
 const iconStyle = {
   fontSize: "50px",
-  color: "#86b817",
+  color: "#7814c9",
 };
 const services = [
   {
@@ -67,10 +67,10 @@ const testimounalCardStyle = {
   borderRadius: "2px",
   padding: "20px",
   background: "#fcfcfc",
-  aspectRatio: 16 / 9,
+  aspectRatio: 16 /10,
 
   "&:hover": {
-    background: "#d0ed91",
+    background: "#563376",
     color: "white",
   },
 };
@@ -79,7 +79,7 @@ const Services = () => {
 
 
   return (
-    <Grid container justifyContent={"center"} gap={3} padding={1}>
+    <Grid container justifyContent={"center"} gap={3}>
       <Grid item xs={12} md={12} textAlign={"center"}mt={6}>
         <Grid sx={{ display: "flex", justifyContent: "center", mb: "1em" }}>
           <Box
@@ -96,7 +96,7 @@ const Services = () => {
               sx={{
                 width: "30%",
                 height: "2px",
-                background: "#86b817",
+                background: "#7814c9",
                 marginLeft: "70%",
               }}
             />
@@ -104,7 +104,7 @@ const Services = () => {
               sx={{
                 width: "50%",
                 height: "2px",
-                background: "#86b817",
+                background: "#7814c9",
                 marginLeft: "50%",
               }}
             />
@@ -112,7 +112,7 @@ const Services = () => {
 
           <Typography
             variant="normal"
-            sx={{ fontWeight: "bold", margin: "0 0.5em", color: "#86b817" }}
+            sx={{ fontWeight: "bold", margin: "0 0.5em", color: "#7814c9" }}
           >
             SERVICES
           </Typography>
@@ -131,11 +131,11 @@ const Services = () => {
               sx={{
                 width: "30%",
                 height: "2px",
-                background: "#86b817",
+                background: "#7814c9",
               }}
             />
             <Divider
-              sx={{ width: "50%", height: "2px", background: "#86b817" }}
+              sx={{ width: "50%", height: "2px", background: "#7814c9" }}
             />
           </Box>
         </Grid>
@@ -144,7 +144,7 @@ const Services = () => {
         </Typography>
       </Grid>
       {services.map((item,i) => (
-        <Grid key={i} item xs={12} sm={5} md={3} lg={2.5}  sx={testimounalCardStyle}>
+        <Grid key={i} item xs={11} sm={5} md={3} lg={2.7}  sx={testimounalCardStyle}>
           {item.icon}
           <Typography variant="h6" mt={3} mb={1} sx={{ fontWeight: "bold" }}>
             {item.title}
