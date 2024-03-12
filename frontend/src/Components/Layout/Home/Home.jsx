@@ -2,6 +2,7 @@ import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import Services from "../Services/Services";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import PopulerEvent from "../PopualerEvent/PopulerEvent";
 
 const Home = () => {
   const data = [
@@ -122,6 +123,7 @@ const Home = () => {
         </Grid>
       </Grid>
       <Services />
+      <PopulerEvent />
     </Grid>
   );
 };
