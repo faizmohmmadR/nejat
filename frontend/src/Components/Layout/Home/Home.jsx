@@ -1,11 +1,10 @@
-import { Box, Button, Grid, Typography, Container } from "@mui/material";
+import { Box, Button, Grid, Typography, Divider } from "@mui/material";
 import React from "react";
 import Services from "../Services/Services";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import News from "../News/News";
-import { styled } from "@mui/system";
-import "../Home/home.css";
+import Charts from "../Charts/Charts";
 
 const Home = () => {
   const data = [
@@ -16,29 +15,33 @@ const Home = () => {
     { id: 5, title: "Life-saving Missions" },
     { id: 6, title: "Risk Reduction" },
   ];
-  const StyledImage = styled("img")({
-    objectFit: "cover",
-    width: "100%",
-    height: "100%",
-  });
 
   return (
-    <Grid sx={{ margin: "0px auto" }} maxWidth="xl">
+    <Grid sx={{ margin: "0px auto" }} maxWidth="xl" width={"100%"}>
       <Grid
         container
-        height="100vh"
         sx={{
           background: (theme) =>
             `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('img/d.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          height: { xs: "50vh", md: "100vh" },
         }}
       >
         <Grid item lg={12} textAlign="center" pt={10}>
-          <Typography variant="h1" color="white">
+          <Typography
+            variant="h1"
+            color="white"
+            sx={{ fontSize: { xs: "40px", md: "70px" } }}
+          >
             Welcome to Nejat
           </Typography>
-          <Typography variant="h4" color="white" mt={15}>
+          <Typography
+            variant="h4"
+            color="white"
+            mt={15}
+            sx={{ fontSize: { xs: "12px", md: "30px" } }}
+          >
             Explore the impact of earthquakes, floods, landslides, and more. Get
             informed, prepared, and empowered. Join us in building resilience
             for a safer future.
@@ -72,9 +75,78 @@ const Home = () => {
           padding="0px 20px"
           sx={{ aspectRatio: 16 / 14 }}
         >
-          <Typography variant="h5" color={"green"} fontWeight="bold">
-            About us
-          </Typography>
+          <Grid item xs={12} md={12} textAlign={"center"}>
+            <Grid
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                mb: "1em",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "25%",
+                  height: { xs: "2vh", md: "3vh" },
+                  justifyContent: "space-between",
+                  padding: "3px 0",
+                }}
+              >
+                <Divider
+                  sx={{
+                    width: "30%",
+                    height: "2px",
+                    background: "#7814c9",
+                    marginLeft: "70%",
+                  }}
+                />
+                <Divider
+                  sx={{
+                    width: "50%",
+                    height: "2px",
+                    background: "#7814c9",
+                    marginLeft: "50%",
+                  }}
+                />
+              </Box>
+
+              <Typography
+                variant="normal"
+                sx={{
+                  fontSize: "2rem",
+                  fontWeight: "bold",
+                  margin: "0 0.5em",
+                  color: "#7814c9",
+                }}
+              >
+                About Us
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "25%",
+                  height: { xs: "2vh", md: "3vh" },
+                  justifyContent: "space-between",
+                  textAlign: "center",
+                  padding: "3px 0",
+                }}
+              >
+                <Divider
+                  sx={{
+                    width: "30%",
+                    height: "2px",
+                    background: "#7814c9",
+                  }}
+                />
+                <Divider
+                  sx={{ width: "50%", height: "2px", background: "#7814c9" }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
           <Typography variant="h3" fontWeight="bold">
             Welcome to <span style={{ color: "green" }}> NEJAT</span>
           </Typography>
@@ -122,10 +194,16 @@ const Home = () => {
               ))}
             </Grid>
           </Grid>
+
           <Button
             variant="contained"
-            color="success"
-            sx={{ mt: 3, padding: 1 }}
+            sx={{
+              mt: 3,
+              padding: "5px 20px",
+              zIndex: 0,
+              bgcolor: "#7814c9",
+              ":hover": { bgcolor: "#a141f0" },
+            }}
           >
             Read More
           </Button>
@@ -133,6 +211,7 @@ const Home = () => {
       </Grid>
       <Services />
       <News />
+      <Charts />
     </Grid>
   );
 };
