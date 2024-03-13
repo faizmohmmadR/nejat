@@ -1,4 +1,4 @@
-import { Grid, Typography, Container, Box } from "@mui/material";
+import { Grid, Typography, Container, Box, Divider } from "@mui/material";
 import React from "react";
 import { styled } from "@mui/system";
 
@@ -11,26 +11,69 @@ const PopulerEvent = () => {
 
   return (
     <Container style={{ marginBottom: "30px" }}>
-      <Typography
-        marginTop={5}
-        variant="normal"
-        style={{
-          fontWeight: "bold",
-          display: "flex",
-          justifyContent: "center",
-          color: "#86b817",
-          textAlign: "center",
-        }}
-      >
-        popular Events
-      </Typography>
-      <Typography
-        marginBottom={5}
-        variant="h4"
-        sx={{ fontWeight: "bold", textAlign: "center" }}
-      >
-        Ouer Services
-      </Typography>
+      <Grid item xs={12} md={12} textAlign={"center"} mt={6}>
+        <Grid sx={{ display: "flex", justifyContent: "center", mb: "1em" }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "10%",
+              height: { xs: "2vh", md: "3vh" },
+              justifyContent: "space-between",
+              padding: "3px 0",
+            }}
+          >
+            <Divider
+              sx={{
+                width: "30%",
+                height: "2px",
+                background: "#7814c9",
+                marginLeft: "70%",
+              }}
+            />
+            <Divider
+              sx={{
+                width: "50%",
+                height: "2px",
+                background: "#7814c9",
+                marginLeft: "50%",
+              }}
+            />
+          </Box>
+
+          <Typography
+            variant="normal"
+            sx={{ fontWeight: "bold", margin: "0 0.5em", color: "#7814c9" }}
+          >
+            populer Events
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "10%",
+              height: { xs: "2vh", md: "3vh" },
+              justifyContent: "space-between",
+              textAlign: "center",
+              padding: "3px 0",
+            }}
+          >
+            <Divider
+              sx={{
+                width: "30%",
+                height: "2px",
+                background: "#7814c9",
+              }}
+            />
+            <Divider
+              sx={{ width: "50%", height: "2px", background: "#7814c9" }}
+            />
+          </Box>
+        </Grid>
+        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          Our Services
+        </Typography>
+      </Grid>
 
       <Grid container spacing={3} ClassName="container">
         <Grid item lg={7} md={6}>
