@@ -3,7 +3,6 @@ import React from "react";
 import Services from "../Services/Services";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
-import Charts from "../Charts/Charts";
 import News from "../News/News";
 
 const Home = () => {
@@ -136,7 +135,6 @@ const Home = () => {
       </Grid>
       <Services />
       <News />
-      <Charts />
     </Grid>
   );
 };
