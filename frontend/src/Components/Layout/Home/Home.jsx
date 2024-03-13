@@ -3,6 +3,7 @@ import React from "react";
 import Services from "../Services/Services";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import Charts from "../Charts/Charts";
 import News from "../News/News";
 
 const Home = () => {
@@ -16,22 +17,31 @@ const Home = () => {
   ];
 
   return (
-    <Grid sx={{ margin: "0px auto" }} maxWidth="xl">
+    <Grid sx={{ margin: "0px auto" }} maxWidth="xl" width={"100%"}>
       <Grid
         container
-        height="100vh"
         sx={{
           background: (theme) =>
             `linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.8)), url('img/d.jpg')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          height: { xs: "50vh", md: "100vh" },
         }}
       >
         <Grid item lg={12} textAlign="center" pt={10}>
-          <Typography variant="h1" color="white">
+          <Typography
+            variant="h1"
+            color="white"
+            sx={{ fontSize: { xs: "40px", md: "70px" } }}
+          >
             Welcome to Nejat
           </Typography>
-          <Typography variant="h4" color="white" mt={15}>
+          <Typography
+            variant="h4"
+            color="white"
+            mt={15}
+            sx={{ fontSize: { xs: "12px", md: "30px" } }}
+          >
             Explore the impact of earthquakes, floods, landslides, and more. Get
             informed, prepared, and empowered. Join us in building resilience
             for a safer future.
@@ -126,6 +136,7 @@ const Home = () => {
       </Grid>
       <Services />
       <News />
+      <Charts />
     </Grid>
   );
 };
