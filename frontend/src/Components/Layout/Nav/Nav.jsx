@@ -15,6 +15,14 @@ const navLinkStyle = {
   color: "white",
   fontWeight: "bolder",
   fontSize: "1.5em",
+  textDecoration: "none",
+};
+
+const MobilenavLinkStyle = {
+  color: "gray",
+  fontWeight: "bolder",
+  fontSize: "1.5em",
+  textDecoration: "none",
 };
 
 const Nav = () => {
@@ -80,22 +88,26 @@ const Nav = () => {
       <Grid
         container
         color={"white"}
-        height="12svh"
+        padding="0px 10px"
         sx={{
           background: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))",
           position: "sticky",
           top: "0px",
           display: { xs: "block", md: "none" },
+          height: { xs: "8svh", sm: "9svh" },
         }}
       >
         <Grid
           item
           xs={12}
-          display={"flex"}
-          justifyContent={"space-between"}
-          alignContent={"space-between"}
-          mt={1.4}
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
         >
+          <Grid item sm={4} display="flex" alignItems="center">
+            <Typography variant="h4">NEJAT</Typography>
+          </Grid>
           <Button sx={{ color: "white" }} onClick={handleOpenMenu}>
             <MenuIcon
               fontSize="large"
@@ -105,11 +117,6 @@ const Nav = () => {
               fontSize="large"
               sx={{ display: anchorEl ? "block" : "none" }}
             />
-          </Button>
-          <Button>
-            <NavLink style={navLinkStyle} to="/login">
-              Login
-            </NavLink>
           </Button>
         </Grid>
       </Grid>
@@ -123,40 +130,57 @@ const Nav = () => {
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "100vw" }}
         >
           {" "}
-          <NavLink to="/">Home</NavLink>
+          <NavLink style={MobilenavLinkStyle} to="/">
+            Home
+          </NavLink>
         </MenuItem>
 
         <MenuItem
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "100vw" }}
         >
           {" "}
-          <NavLink to="/about">About</NavLink>
+          <NavLink style={MobilenavLinkStyle} to="/about">
+            About
+          </NavLink>
         </MenuItem>
 
         <MenuItem
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "100vw" }}
         >
           {" "}
-          <NavLink to="/contact">Contact</NavLink>
+          <NavLink style={MobilenavLinkStyle} to="/contact">
+            Contact
+          </NavLink>
         </MenuItem>
 
         <MenuItem
           onClick={() => {
             handleCloseMenu();
           }}
-          sx={{ width: "20vw" }}
+          sx={{ width: "100vw" }}
         >
           {" "}
-          <NavLink>Services</NavLink>
+          <NavLink style={MobilenavLinkStyle}>Services</NavLink>
+        </MenuItem>
+
+        <MenuItem
+          onClick={() => {
+            handleCloseMenu();
+          }}
+          sx={{ width: "100vw" }}
+        >
+          <NavLink style={MobilenavLinkStyle} to="/login">
+            Login
+          </NavLink>
         </MenuItem>
       </Menu>
     </>
