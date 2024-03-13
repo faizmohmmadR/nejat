@@ -10,8 +10,8 @@ const PopulerEvent = () => {
   });
 
   return (
-    <Container style={{ marginBottom: "30px" }}>
-      <Grid item xs={12} md={12} textAlign={"center"} mt={6}>
+    <Container style={{ marginBottom: "30px" }} marginBottom={6}>
+      <Grid item xs={12} md={12} textAlign={"center"} mt={6} marginBottom={6}>
         <Grid sx={{ display: "flex", justifyContent: "center", mb: "1em" }}>
           <Box
             sx={{
@@ -71,7 +71,7 @@ const PopulerEvent = () => {
           </Box>
         </Grid>
         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-          Our Services
+          our services
         </Typography>
       </Grid>
 
@@ -84,9 +84,9 @@ const PopulerEvent = () => {
               md={12}
               data-wow-delay="0.1s"
               sx={{
-                transition: "all 1s",
-                ":hover": {
-                  transform: "scale(0.9,0.9)",
+                transition: "transform 0.3s",
+                "&:hover": {
+                  transform: "scale(1.1)",
                 },
                 position: "relative",
               }}
@@ -112,8 +112,8 @@ const PopulerEvent = () => {
                   color: "primary.main",
                   fontWeight: "bold",
                   position: "absolute",
-                  bottom: 0,
-                  end: 0,
+                  bottom: "0.1rem",
+                  right: 0,
                   margin: "1rem",
                   padding: "0.5rem 1rem",
                 }}
@@ -127,15 +127,18 @@ const PopulerEvent = () => {
               md={12}
               data-wow-delay="0.3s"
               sx={{
-                transition: "all 1s",
-                ":hover": {
-                  transform: "scale(0.9,0.9)",
+                transition: "transform 0.3s",
+                "&:hover": {
+                  transform: "scale(1.1)",
                 },
-                objectFit: "cover",
                 position: "relative",
               }}
             >
-              <StyledImage src="img/pexels-david-henry-5440808.jpg" alt="" />
+              <StyledImage
+                src="img/pexels-david-henry-5440808.jpg"
+                alt=""
+                style={{ height: "70%" }}
+              />
               <Box
                 sx={{
                   backgroundColor: "white",
@@ -156,8 +159,8 @@ const PopulerEvent = () => {
                   color: "primary.main",
                   fontWeight: "bold",
                   position: "absolute",
-                  bottom: 0,
-                  end: 0,
+                  bottom: "8rem",
+                  right: 0,
                   margin: "1rem",
                   padding: "0.5rem 1rem",
                 }}
@@ -171,9 +174,9 @@ const PopulerEvent = () => {
               md={12}
               data-wow-delay="0.5s"
               sx={{
-                transition: "all 1s",
-                ":hover": {
-                  transform: "scale(0.9,0.9)",
+                transition: "transform 0.3s",
+                "&:hover": {
+                  transform: "scale(1.1)",
                 },
                 position: "relative",
               }}
@@ -181,6 +184,7 @@ const PopulerEvent = () => {
               <StyledImage
                 src="img/pexels-ridzuan-ibrahim-9739131.jpg"
                 alt=""
+                style={{ height: "70%" }}
               />
               <Box
                 sx={{
@@ -202,8 +206,8 @@ const PopulerEvent = () => {
                   color: "primary.main",
                   fontWeight: "bold",
                   position: "absolute",
-                  bottom: 0,
-                  end: 0,
+                  bottom: "8rem",
+                  right: 0,
                   margin: "1rem",
                   padding: "0.5rem 1rem",
                 }}
@@ -220,14 +224,18 @@ const PopulerEvent = () => {
           data-wow-delay="0.7s"
           style={{ minHeight: "350px" }}
           sx={{
-            transition: "all 1s",
-            ":hover": {
-              transform: "scale(0.9,0.9)",
+            transition: "transform 0.3s",
+            "&:hover": {
+              transform: "scale(1.1)",
             },
             position: "relative",
           }}
         >
-          <StyledImage src="img/pexels-алесь-усцінаў-11734705.jpg" alt="" />
+          <StyledImage
+            src="img/pexels-алесь-усцінаў-11734705.jpg"
+            alt=""
+            style={{ height: "86%" }}
+          />
           <Box
             sx={{
               backgroundColor: "white",
@@ -248,8 +256,8 @@ const PopulerEvent = () => {
               color: "primary.main",
               fontWeight: "bold",
               position: "absolute",
-              bottom: 0,
-              end: 0,
+              bottom: "8rem",
+              right: 0,
               margin: "1rem",
               padding: "0.5rem 1rem",
             }}
