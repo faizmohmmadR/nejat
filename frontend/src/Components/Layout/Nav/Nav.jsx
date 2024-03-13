@@ -34,6 +34,7 @@ const Nav = () => {
         alignItems="center"
         height="12svh"
         padding="0px 10px"
+        zIndex={1}
         sx={{
           background: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))",
           position: "sticky",
@@ -81,6 +82,7 @@ const Nav = () => {
         container
         color={"white"}
         height="12svh"
+        zIndex={1}
         sx={{
           background: "linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9))",
           position: "sticky",
