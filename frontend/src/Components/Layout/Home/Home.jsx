@@ -1,9 +1,11 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, Container } from "@mui/material";
 import React from "react";
 import Services from "../Services/Services";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import News from "../News/News";
+import { styled } from "@mui/system";
+import "../Home/home.css";
 
 const Home = () => {
   const data = [
@@ -14,6 +16,12 @@ const Home = () => {
     { id: 5, title: "Life-saving Missions" },
     { id: 6, title: "Risk Reduction" },
   ];
+  const StyledImage = styled("img")({
+    objectFit: "cover",
+    width: "100%",
+    height: "100%",
+  });
+
   return (
     <Grid sx={{ margin: "0px auto" }} maxWidth="xl">
       <Grid

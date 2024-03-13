@@ -12,7 +12,10 @@ import {
   Link,
   TextField,
   Typography,
+  InputAdornment,
+  IconButton,
 } from "@mui/material";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const Login = () => {
   const [username, setusername] = useState();
@@ -21,6 +24,7 @@ const Login = () => {
 
   const [usernameError, setusernamError] = useState(false);
   const [passwordError, setpasswordError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const [formValid, setFormValid] = useState();
   const [success, setSuccess] = useState();
@@ -74,9 +78,13 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setSuccess(null);
+    if (!username && !password) {
+      setFormValid("All fields are required");
+      return;
+    }
 
-    if (!username || !password) {
-      setFormValid("Username and Password are required");
+    if (!username && password) {
+      setFormValid("User name is required");
       return;
     }
 
@@ -126,19 +134,31 @@ const Login = () => {
               autoComplete="username"
             />
             <TextField
-              label="Password"
-              id="password"
-              placeholder="Enter password"
+              label="password"
+              placeholder="Enter your password"
               variant="standard"
-              type="password"
+              type={showPassword ? "text" : "password"}
               fullWidth
               required
+              sx={{ mt: 2 }}
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               error={passwordError}
               onBlur={handlePassword}
-              sx={{ mt: 2 }}
               autoComplete="current-password"
+              InputProps={{
+                endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={() => setShowPassword(!showPassword)}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                ),
+              }}
             />
             <Typography mt={2}>
               <Checkbox
@@ -176,7 +196,7 @@ const Login = () => {
             <Grid>
               <Typography textAlign={"center"} sx={{ mt: "10px" }}>
                 Do you don't have account{" "}
-                <Link rel="stylesheet" href="#">
+                <Link rel="stylesheet" href="/register">
                   Register Now
                 </Link>
               </Typography>

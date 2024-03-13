@@ -1,14 +1,11 @@
 import React from "react";
-import { Link, Grid, Typography } from "@mui/material";
+import { Link, Grid, Typography, Avatar } from "@mui/material";
+import FacebookIcon from "@mui/icons-material/Facebook";
 // import XIcon from "@mui/icons-material/X";
-
-import {
-  FaCopyright,
-  FaFacebook,
-  FaInstagramSquare,
-  FaLinkedin,
-  FaWhatsappSquare,
-} from "react-icons/fa";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import CopyrightIcon from "@mui/icons-material/Copyright";
 
 const Footer = () => {
   const TitleStyle = {
@@ -36,12 +33,13 @@ const Footer = () => {
     },
   };
   const IconStyle = {
-    marginRight: "10px",
+    marginRight: "12px",
     color: "#0064ff",
-    fontSize: "28px",
+    fontSize: "10px",
 
     "&:hover": {
-      color: "green",
+      color: "white",
+      backgroundColor: "blue",
     },
   };
   const ButtomFooterStyle = {
@@ -173,21 +171,29 @@ const Footer = () => {
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
           <Typography style={TitleStyle}>Commeing soon on</Typography>
-          <Typography sx={{ mt: "1em", ml: "3em" }}>
-            <Link href="#" sx={IconStyle}>
-              <FaInstagramSquare />
+          <Typography sx={{ mt: "1em", ml: "1em", display: "flex" }}>
+            <Link href="#">
+              <Avatar sx={IconStyle}>
+                <FacebookIcon />
+              </Avatar>
             </Link>
-            <Link href="#" sx={IconStyle}>
-              <FaFacebook />
+            <Link href="#">
+              <Avatar sx={IconStyle}>X</Avatar>
             </Link>
-            <Link href="#" sx={IconStyle}>
-              X
+            <Link href="#">
+              <Avatar sx={IconStyle}>
+                <InstagramIcon />
+              </Avatar>
             </Link>
-            <Link href="#" sx={IconStyle}>
-              <FaWhatsappSquare />
+            <Link href="#">
+              <Avatar sx={IconStyle}>
+                <LinkedInIcon />
+              </Avatar>
             </Link>
-            <Link href="#" sx={IconStyle}>
-              <FaLinkedin />
+            <Link href="#">
+              <Avatar sx={IconStyle}>
+                <GitHubIcon />
+              </Avatar>
             </Link>
           </Typography>
           <Grid
@@ -211,7 +217,7 @@ const Footer = () => {
       >
         <Grid item xs={12} md={5.8}>
           <Typography sx={{ color: "#ffffff" }}>
-            <FaCopyright />
+            <CopyrightIcon sx={{ fontSize: "15px" }} />
             {new Date().getFullYear()} Nejat. All right reserved.
           </Typography>
         </Grid>
