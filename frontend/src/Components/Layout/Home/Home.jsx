@@ -4,6 +4,7 @@ import Services from "../Services/Services";
 
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import News from "../News/News";
+import Charts from "../Charts/Charts";
 
 const Home = () => {
   const data = [
@@ -124,10 +125,16 @@ const Home = () => {
               ))}
             </Grid>
           </Grid>
+
           <Button
             variant="contained"
-            color="success"
-            sx={{ mt: 3, padding: 1 }}
+            sx={{
+              mt: 3,
+              padding: "5px 20px",
+              zIndex: 0,
+              bgcolor: "#7814c9",
+              ":hover": { bgcolor: "#a141f0" },
+            }}
           >
             Read More
           </Button>
