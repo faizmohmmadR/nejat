@@ -1,8 +1,10 @@
 import { Box, Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import Services from "../Services/Services";
+
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import Charts from "../Charts/Charts";
+import News from "../News/News";
 
 const Home = () => {
   const data = [
@@ -13,6 +15,7 @@ const Home = () => {
     { id: 5, title: "Life-saving Missions" },
     { id: 6, title: "Risk Reduction" },
   ];
+
   return (
     <Grid sx={{ margin: "0px auto" }} maxWidth="xl" width={"100%"}>
       <Grid
@@ -132,6 +135,7 @@ const Home = () => {
         </Grid>
       </Grid>
       <Services />
+      <News />
       <Charts />
     </Grid>
   );

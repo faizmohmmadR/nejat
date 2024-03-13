@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "./Components/Layout/Footer/Footer";
 import "./App.css";
 import { Outlet } from "react-router-dom";
 import { Grid } from "@mui/material";
+import Footer from "./Components/Layout/Footer/Footer";
 import Nav from "./Components/Layout/Nav/Nav";
 
 function App() {
