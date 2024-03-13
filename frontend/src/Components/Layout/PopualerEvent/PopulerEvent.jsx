@@ -88,6 +88,7 @@ const PopulerEvent = () => {
                 ":hover": {
                   transform: "scale(0.9,0.9)",
                 },
+                objectFit: "cover",
                 position: "relative",
               }}
             >
