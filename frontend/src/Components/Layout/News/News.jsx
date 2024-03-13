@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, Grid, Typography,  Button } from "@mui/material";
+import { Box, Divider, Grid, Typography, Button } from "@mui/material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -136,7 +136,7 @@ const News = () => {
                 minHeight: { xs: "30vh", md: "50svh" },
                 transition: "transform 0.3s",
                 "&:hover": {
-                  transform: "scale(1.1)",
+                  transform: "scale(6.1)",
                 },
                 objectFit: "cover",
               }}
@@ -145,7 +145,6 @@ const News = () => {
 
           <Grid
             container
-            
             sx={{
               display: "flex",
               justifyContent: "space-between",
