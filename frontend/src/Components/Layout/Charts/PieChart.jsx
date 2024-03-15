@@ -1,5 +1,4 @@
 import * as React from "react";
-import { DefaultizedPieValueType } from "@mui/x-charts";
 import { PieChart, pieArcLabelClasses } from "@mui/x-charts/PieChart";
 
 const data = [
