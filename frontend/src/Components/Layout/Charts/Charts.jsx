@@ -4,7 +4,7 @@ import { axisClasses } from "@mui/x-charts";
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 import { Grid, Box, Typography, Divider } from "@mui/material";
 import PieChart1 from "./PieChart";
-import { Grid } from "@mui/material";
+
 
 
 const chartSetting = {
