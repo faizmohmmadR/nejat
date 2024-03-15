@@ -1,7 +1,6 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography, Divider } from "@mui/material";
 import React from "react";
 import Services from "../Services/Services";
-
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import News from "../News/News";
 import Charts from "../Charts/Charts";
@@ -75,9 +74,78 @@ const Home = () => {
           padding="0px 20px"
           sx={{ aspectRatio: 16 / 14 }}
         >
-          <Typography variant="h5" color={"green"} fontWeight="bold">
-            About us
-          </Typography>
+          <Grid item xs={12} md={12} textAlign={"center"}>
+            <Grid
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                mb: "1em",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "25%",
+                  height: { xs: "2vh", md: "3vh" },
+                  justifyContent: "space-between",
+                  padding: "3px 0",
+                }}
+              >
+                <Divider
+                  sx={{
+                    width: "30%",
+                    height: "2px",
+                    background: "#7814c9",
+                    marginLeft: "70%",
+                  }}
+                />
+                <Divider
+                  sx={{
+                    width: "50%",
+                    height: "2px",
+                    background: "#7814c9",
+                    marginLeft: "50%",
+                  }}
+                />
+              </Box>
+
+              <Typography
+                variant="normal"
+                sx={{
+                  fontSize: "2rem",
+                  fontWeight: "bold",
+                  margin: "0 0.5em",
+                  color: "#7814c9",
+                }}
+              >
+                About Us
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+                  flexDirection: "column",
+                  width: "25%",
+                  height: { xs: "2vh", md: "3vh" },
+                  justifyContent: "space-between",
+                  textAlign: "center",
+                  padding: "3px 0",
+                }}
+              >
+                <Divider
+                  sx={{
+                    width: "30%",
+                    height: "2px",
+                    background: "#7814c9",
+                  }}
+                />
+                <Divider
+                  sx={{ width: "50%", height: "2px", background: "#7814c9" }}
+                />
+              </Box>
+            </Grid>
+          </Grid>
           <Typography variant="h3" fontWeight="bold">
             Welcome to <span style={{ color: "green" }}> NEJAT</span>
           </Typography>
@@ -142,6 +210,7 @@ const Home = () => {
       </Grid>
       <Services />
       <News />
+      <Charts />
     </Grid>
   );
 };

@@ -1,7 +1,11 @@
 import * as React from "react";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { axisClasses } from "@mui/x-charts";
+import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
+import { Grid, Box, Typography, Divider } from "@mui/material";
+import PieChart1 from "./PieChart";
 import { Grid } from "@mui/material";
+
 
 const chartSetting = {
   yAxis: [
@@ -9,7 +13,7 @@ const chartSetting = {
       label: "rainfall (mm)",
     },
   ],
-  width: 400,
+  width: 450,
   height: 300,
   sx: {
     [`.${axisClasses.left} .${axisClasses.label}`]: {
@@ -46,160 +50,6 @@ const dataset = [
     volcano: 18,
     province: "Baghlan",
   },
-  {
-    floods: 79,
-    earthquack: 32,
-    storm: 61,
-    volcano: 54,
-    province: "Balkh",
-  },
-  {
-    floods: 63,
-    earthquack: 46,
-    storm: 17,
-    volcano: 85,
-    province: "Bamyan",
-  },
-  {
-    floods: 28,
-    earthquack: 89,
-    storm: 73,
-    volcano: 10,
-    province: "Daykundi",
-  },
-  {
-    floods: 76,
-    earthquack: 51,
-    storm: 36,
-    volcano: 69,
-    province: "Farah",
-  },
-  {
-    floods: 55,
-    earthquack: 81,
-    storm: 27,
-    volcano: 47,
-    province: "Faryab",
-  },
-//   {
-//     floods: 87,
-//     earthquack: 39,
-//     storm: 62,
-//     volcano: 15,
-//     province: "Ghazni",
-//   },
-//   {
-//     floods: 32,
-//     earthquack: 72,
-//     storm: 58,
-//     volcano: 91,
-//     province: "Ghor",
-//   },
-//   {
-//     floods: 67,
-//     earthquack: 18,
-//     storm: 84,
-//     volcano: 41,
-//     province: "Helmand",
-//   },
-//   {
-//     floods: 48,
-//     earthquack: 56,
-//     storm: 95,
-//     volcano: 29,
-//     province: "Herat",
-//   },
-//   {
-//     floods: 83,
-//     earthquack: 28,
-//     storm: 44,
-//     volcano: 69,
-//     province: "Jowzjan",
-//   },
-//   {
-//     floods: 19,
-//     earthquack: 65,
-//     storm: 80,
-//     volcano: 57,
-//     province: "Kandahar",
-//   },
-//   {
-//     floods: 72,
-//     earthquack: 40,
-//     storm: 55,
-//     volcano: 88,
-//     province: "Kapisa",
-//   },
-//   {
-//     floods: 31,
-//     earthquack: 59,
-//     storm: 70,
-//     volcano: 23,
-//     province: "Khost",
-//   },
-//   {
-//     floods: 58,
-//     earthquack: 79,
-//     storm: 32,
-//     volcano: 51,
-//     province: "Kunar",
-//   },
-//   {
-//     floods: 45,
-//     earthquack: 35,
-//     storm: 76,
-//     volcano: 94,
-//     province: "Kunduz",
-//   },
-//   {
-//     floods: 90,
-//     earthquack: 24,
-//     storm: 59,
-//     volcano: 13,
-//     province: "Laghman",
-//   },
-//   {
-//     floods: 23,
-//     earthquack: 71,
-//     storm: 40,
-//     volcano: 65,
-//     province: "Logar",
-//   },
-//   {
-//     floods: 69,
-//     earthquack: 14,
-//     storm: 88,
-//     volcano: 32,
-//     province: "Nangarhar",
-//   },
-//   {
-//     floods: 36,
-//     earthquack: 48,
-//     storm: 27,
-//     volcano: 79,
-//     province: "Nimruz",
-//   },
-//   {
-//     floods: 78,
-//     earthquack: 91,
-//     storm: 45,
-//     volcano: 26,
-//     province: "Nuristan",
-//   },
-//   {
-//     floods: 53,
-//     earthquack: 28,
-//     storm: 64,
-//     volcano: 72,
-//     province: "Paktia",
-//   },
-//   {
-//     floods: 17,
-//     earthquack: 67,
-//     storm: 39,
-//     volcano: 59,
-//     province: "Paktika",
-//   },
 ];
 
 const valueFormatter = (value) => `${value} occurrences`;
@@ -207,6 +57,163 @@ const valueFormatter = (value) => `${value} occurrences`;
 export default function Charts() {
   return (
     <Grid container sx={{ overflow: "auto" }}>
+      <Grid item xs={12} md={12} textAlign={"center"} mt={4} mb={6}>
+        <Grid
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            mb: "1em",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "10%",
+              height: { xs: "2vh", md: "3vh" },
+              justifyContent: "space-between",
+              padding: "3px 0",
+            }}
+          >
+            <Divider
+              sx={{
+                width: "30%",
+                height: "2px",
+                background: "#7814c9",
+                marginLeft: "70%",
+              }}
+            />
+            <Divider
+              sx={{
+                width: "50%",
+                height: "2px",
+                background: "#7814c9",
+                marginLeft: "50%",
+              }}
+            />
+          </Box>
+
+          <Typography
+            variant="normal"
+            sx={{
+              fontWeight: "bold",
+              margin: "0 0.5em",
+              color: "#7814c9",
+            }}
+          >
+            CHARTS
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              width: "10%",
+              height: { xs: "2vh", md: "3vh" },
+              justifyContent: "space-between",
+              textAlign: "center",
+              padding: "3px 0",
+            }}
+          >
+            <Divider
+              sx={{
+                width: "30%",
+                height: "2px",
+                background: "#7814c9",
+              }}
+            />
+            <Divider
+              sx={{ width: "50%", height: "2px", background: "#7814c9" }}
+            />
+          </Box>
+        </Grid>
+        <Typography variant="h4" sx={{ fontWeight: "bold" }}>
+          Newest Reports
+        </Typography>
+      </Grid>
+      <Grid item xs={12} md={6} lg={4} textAlign={"center"}>
+        <BarChart
+          dataset={dataset}
+          xAxis={[{ scaleType: "band", dataKey: "province" }]}
+          series={[
+            { dataKey: "floods", label: "Floods", valueFormatter },
+            { dataKey: "earthquack", label: "Earthquack", valueFormatter },
+            { dataKey: "storm", label: "Storm", valueFormatter },
+            { dataKey: "volcano", label: "Volcano", valueFormatter },
+          ]}
+          {...chartSetting}
+        />
+        <Typography
+          variant="h6"
+          ml={3}
+          mb={6}
+          lg={4}
+          mt={4}
+          sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+          textAlign={"start"}
+        >
+          The number of accidents in different provinces in the previous year
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        md={4}
+        mt={5}
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <PieChart1 />
+
+        <Typography
+          variant="h6"
+          ml={3}
+          mb={6}
+          lg={4}
+          mt={4}
+          sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+        >
+          The four provinces that had the most casualties
+        </Typography>
+      </Grid>
+      <Grid item xs={12} md={12} lg={4}>
+        <Box sx={{ flexGrow: 1 }}>
+          <SparkLineChart
+            plotType="bar"
+            data={[1, 4, 2, 5, 7, 2, 4, 6]}
+            height={280}
+            showTooltip
+            showHighlight
+            xAxis={{
+              scaleType: "band",
+              data: [
+                new Date(2016, 0, 1),
+                new Date(2017, 0, 1),
+                new Date(2018, 0, 1),
+                new Date(2019, 0, 1),
+                new Date(2020, 0, 1),
+                new Date(2021, 0, 1),
+                new Date(2022, 0, 1),
+                new Date(2023, 0, 1),
+              ],
+              valueFormatter: (value) => value.getFullYear(),
+            }}
+          />
+        </Box>
+        <Typography
+          variant="h6"
+          ml={3}
+          mb={6}
+          lg={4}
+          mt={6}
+          sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+        >
+          The number of people killed in the year from 2016 to 2023
+        </Typography>
+      </Grid>
       <BarChart
         dataset={dataset}
         xAxis={[{ scaleType: "band", dataKey: "province" }]}
