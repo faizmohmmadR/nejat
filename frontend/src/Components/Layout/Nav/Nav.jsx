@@ -89,6 +89,7 @@ const Nav = () => {
       <Grid
         container
         color={"white"}
+        padding="0px 10px"
         height="12svh"
         zIndex={1}
         sx={{

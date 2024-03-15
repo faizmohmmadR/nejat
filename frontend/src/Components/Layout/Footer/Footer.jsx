@@ -1,11 +1,12 @@
 import React from "react";
-import { Link, Grid, Typography, Avatar } from "@mui/material";
+import { Grid, Typography, Avatar } from "@mui/material";
 import FacebookIcon from "@mui/icons-material/Facebook";
 // import XIcon from "@mui/icons-material/X";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CopyrightIcon from "@mui/icons-material/Copyright";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const TitleStyle = {
@@ -22,9 +23,9 @@ const Footer = () => {
     marginLeft: "3em",
   };
   const ElementStyle = {
-    textDecoration: "none",
     color: "#263d78",
     fontFamily: "serif",
+    textDecoration: "none",
 
     fontSize: "15px",
     "&:hover": {
@@ -52,6 +53,7 @@ const Footer = () => {
   };
   return (
     <Grid
+      position={"relative"}
       container
       sx={{
         height: "90vh",
@@ -76,126 +78,80 @@ const Footer = () => {
         <Grid item xs={12} sm={5.8} md={2.8}>
           <Typography style={TitleStyle}>About Us</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Mission, Impact, and History
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Our Leadership
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              In the news
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Careers
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Financial Statment
-            </Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
+            <Link style={ElementStyle}>Mission, Impact, and History</Link>
+            <Link style={ElementStyle}>Our Leadership</Link>
+            <Link style={ElementStyle}>In the news</Link>
+            <Link style={ElementStyle}>Careers</Link>
+            <Link style={ElementStyle}>Financial Statment</Link>
           </Typography>
           <Typography style={TitleStyle}>For Media</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              Media Export
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Press Releases
-            </Link>
+            <Link style={ElementStyle}>Media Export</Link>
+            <Link style={ElementStyle}>Press Releases</Link>
           </Typography>
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
           <Typography style={TitleStyle}>Get Involoved</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              Event
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Volunteer
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Ways to Give
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Become and Advosate
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Share Your Story
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Sponsors & Supporters
-            </Link>
+            <Link style={ElementStyle}>Event</Link>
+            <Link style={ElementStyle}>Volunteer</Link>
+            <Link style={ElementStyle}>Ways to Give</Link>
+            <Link style={ElementStyle}>Become and Advosate</Link>
+            <Link style={ElementStyle}>Share Your Story</Link>
+            <Link style={ElementStyle}>Sponsors & Supporters</Link>
           </Typography>
           <Typography style={TitleStyle}>Resources</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
           </Typography>
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
           <Typography style={TitleStyle}>Signature Reports</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              State of the Air
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              State of Lung Concer Report
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              State of Tobacco Control
-            </Link>
+            <Link style={ElementStyle}>State of the Air</Link>
+            <Link style={ElementStyle}>State of Lung Concer Report</Link>
+            <Link style={ElementStyle}>State of Tobacco Control</Link>
           </Typography>
           <Typography style={TitleStyle}>Contact Us</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
           </Typography>
           <Typography style={TitleStyle}>Professional Education</Typography>
           <Typography style={ContentStyle}>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
-            <Link href="#" sx={ElementStyle}>
-              Go to About Page
-            </Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
+            <Link style={ElementStyle}>Go to About Page</Link>
           </Typography>
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
           <Typography style={TitleStyle}>Commeing soon on</Typography>
-          <Typography sx={{ mt: "1em", ml: "1em", display: "flex" }}>
-            <Link href="#">
+          <Grid sx={{ mt: "1em", ml: "1em", display: "flex" }}>
+            <Link>
               <Avatar sx={IconStyle}>
                 <FacebookIcon />
               </Avatar>
             </Link>
-            <Link href="#">
+            <Link>
               <Avatar sx={IconStyle}>X</Avatar>
             </Link>
-            <Link href="#">
+            <Link>
               <Avatar sx={IconStyle}>
                 <InstagramIcon />
               </Avatar>
             </Link>
-            <Link href="#">
+            <Link>
               <Avatar sx={IconStyle}>
                 <LinkedInIcon />
               </Avatar>
             </Link>
-            <Link href="#">
+            <Link>
               <Avatar sx={IconStyle}>
                 <GitHubIcon />
               </Avatar>
             </Link>
-          </Typography>
+          </Grid>
           <Grid
             item
             component="img"
@@ -213,7 +169,13 @@ const Footer = () => {
         borderColor={"white"}
         padding={"4px"}
         bgcolor={"#0d2354"}
-        sx={{ alignItems: "center", textAlign: "center" }}
+        sx={{
+          alignItems: "center",
+          textAlign: "center",
+          height: "20svh",
+          position: "absolute",
+          bottom: "0px",
+        }}
       >
         <Grid item xs={12} md={5.8}>
           <Typography sx={{ color: "#ffffff" }}>
@@ -221,17 +183,11 @@ const Footer = () => {
             {new Date().getFullYear()} Nejat. All right reserved.
           </Typography>
         </Grid>
-        <Grid item xs={12} md={5.8} sx={{}}>
+        <Grid item xs={12} md={5.8}>
           <Typography sx={{}}>
-            <Link href="#" sx={ButtomFooterStyle}>
-              Terms & Conditions
-            </Link>
-            <Link href="#" sx={ButtomFooterStyle}>
-              Privqcy
-            </Link>
-            <Link href="#" sx={ButtomFooterStyle}>
-              Security
-            </Link>
+            <Link style={ButtomFooterStyle}>Terms & Conditions</Link>
+            <Link style={ButtomFooterStyle}>Privqcy</Link>
+            <Link style={ButtomFooterStyle}>Security</Link>
           </Typography>
         </Grid>
       </Grid>

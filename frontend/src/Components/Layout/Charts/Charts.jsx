@@ -4,6 +4,8 @@ import { axisClasses } from "@mui/x-charts";
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 import { Grid, Box, Typography, Divider } from "@mui/material";
 import PieChart1 from "./PieChart";
+import { Grid } from "@mui/material";
+
 
 const chartSetting = {
   yAxis: [
@@ -212,6 +214,17 @@ export default function Charts() {
           The number of people killed in the year from 2016 to 2023
         </Typography>
       </Grid>
+      <BarChart
+        dataset={dataset}
+        xAxis={[{ scaleType: "band", dataKey: "province" }]}
+        series={[
+          { dataKey: "floods", label: "Floods", valueFormatter },
+          { dataKey: "earthquack", label: "Earthquack", valueFormatter },
+          { dataKey: "storm", label: "Storm", valueFormatter },
+          { dataKey: "volcano", label: "Volcano", valueFormatter },
+        ]}
+        {...chartSetting}
+      />
     </Grid>
   );
 }
