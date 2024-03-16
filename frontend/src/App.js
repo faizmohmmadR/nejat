@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import { Grid } from "@mui/material";
 import Footer from "./Components/Layout/Footer/Footer";
 import Nav from "./Components/Layout/Nav/Nav";
+import PopulerEvent from "./Components/Layout/PopualerEvent/PopulerEvent";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <Nav />
       <Outlet />
       <Footer />
+      <PopulerEvent />
     </Grid>
   );
 }
