@@ -4,9 +4,8 @@ import { styled } from "@mui/system";
 
 const PopulerEvent = () => {
   const StyledImage = styled("img")({
-    objectFit: "cover",
-    width: "100%",
-    height: "100%",
+    width: "90%",
+    height: "90%",
   });
 
   return (
@@ -87,6 +86,7 @@ const PopulerEvent = () => {
                 transition: "transform 0.3s",
                 "&:hover": {
                   transform: "scale(1.1)",
+                  objectFit: "cover",
                 },
                 position: "relative",
               }}
@@ -112,8 +112,8 @@ const PopulerEvent = () => {
                   color: "primary.main",
                   fontWeight: "bold",
                   position: "absolute",
-                  bottom: "0.1rem",
-                  right: 0,
+                  bottom: "3rem",
+                  right: "4rem",
                   margin: "1rem",
                   padding: "0.5rem 1rem",
                 }}
@@ -160,7 +160,7 @@ const PopulerEvent = () => {
                   fontWeight: "bold",
                   position: "absolute",
                   bottom: "8rem",
-                  right: 0,
+                  right: "2rem",
                   margin: "1rem",
                   padding: "0.5rem 1rem",
                 }}
@@ -207,7 +207,7 @@ const PopulerEvent = () => {
                   fontWeight: "bold",
                   position: "absolute",
                   bottom: "8rem",
-                  right: 0,
+                  right: "2rem",
                   margin: "1rem",
                   padding: "0.5rem 1rem",
                 }}
@@ -257,7 +257,7 @@ const PopulerEvent = () => {
               fontWeight: "bold",
               position: "absolute",
               bottom: "8rem",
-              right: 0,
+              right: "3rem",
               margin: "1rem",
               padding: "0.5rem 1rem",
             }}

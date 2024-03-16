@@ -136,7 +136,7 @@ const News = () => {
                 minHeight: { xs: "30vh", md: "50svh" },
                 transition: "transform 0.3s",
                 "&:hover": {
-                  transform: "scale(6.1)",
+                  transform: "scale(1.1)",
                 },
                 objectFit: "cover",
               }}
