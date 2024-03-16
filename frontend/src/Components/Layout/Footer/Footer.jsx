@@ -59,6 +59,7 @@ const Footer = () => {
         height: "90vh",
         width: "100vw",
         bgcolor: "#f6f6f6",
+        borderTop: "2px solid #d5dbde",
         "@media (min-width:280px)": {
           height: "210vh",
         },

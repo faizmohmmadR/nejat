@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Divider, Grid, Typography,  Button } from "@mui/material";
+import { Box, Divider, Grid, Typography, Button } from "@mui/material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
@@ -45,14 +45,14 @@ const services = [
 
 const newsCardStyle = {
   borderRadius: "2px",
-  background: "#f6f6f6",
+  background: "white",
   textAlign: "center",
 };
 const iconStyle = {
   display: "flex",
-
   alignItems: "center",
-  padding: "0.5em",
+  padding: "0.5em"
+  ,justifyContent:"space-evenly",
   border: "0.5px solid #d5dbde",
 };
 
@@ -123,7 +123,15 @@ const News = () => {
         </Typography>
       </Grid>
       {services.map((item, i) => (
-        <Grid item key={i} xs={12} sm={5.4} md={3} lg={3.7} sx={newsCardStyle}>
+        <Grid
+          item
+          key={i}
+          xs={12}
+          sm={5.7}
+          md={3.7}
+          lg={3.7}
+          sx={newsCardStyle}
+        >
           <Grid container sx={{ overflow: "hidden" }}>
             <Grid
               item
@@ -133,7 +141,7 @@ const News = () => {
               src={item.img}
               title="name"
               sx={{
-                minHeight: { xs: "30vh", md: "50svh" },
+                minHeight: { xs: "30vh", sm: "50vh", md: "50svh", xl: "20svh" },
                 transition: "transform 0.3s",
                 "&:hover": {
                   transform: "scale(1.1)",
@@ -145,7 +153,6 @@ const News = () => {
 
           <Grid
             container
-            
             sx={{
               display: "flex",
               justifyContent: "space-between",
@@ -154,24 +161,65 @@ const News = () => {
             }}
           >
             <Grid item xs={4} sx={iconStyle}>
-              <LocationOnIcon sx={{ fontSize: "18px", mr: "5px" }} />{" "}
-              <Typography sx={{ color: "#8c8e8d" }}> Location</Typography>
+              <LocationOnIcon
+                sx={{ fontSize: { sx: "18px", sm: "14px", md: "13px",lg:"17px" } }}
+              />{" "}
+              <Typography
+                sx={{
+                  color: "#8c8e8d",
+                  fontSize: { sx: "18px", sm: "14px", md: "13px",lg:"17px" },
+                }}
+              >
+                {" "}
+                Location
+              </Typography>
             </Grid>
 
             <Grid item xs={4} sx={iconStyle}>
-              <CalendarMonthIcon sx={{ fontSize: "18px", mr: "5px" }} />{" "}
-              <Typography sx={{ color: "#8c8e8d" }}> 4 days</Typography>
+              <CalendarMonthIcon
+                sx={{ fontSize: { sx: "18px", sm: "14px", md: "13px",lg:"17px" } }}
+              />{" "}
+              <Typography
+                sx={{
+                  color: "#8c8e8d",
+                  fontSize: { sx: "18px", sm: "14px", md: "13px" ,lg:"17px"},
+                }}
+              >
+                {" "}
+                4 days
+              </Typography>
             </Grid>
 
             <Grid item xs={4} sx={iconStyle}>
-              <PersonIcon sx={{ fontSize: "18px", mr: "5px" }} />
-              <Typography sx={{ color: "#8c8e8d" }}> 3 Person</Typography>
+              <PersonIcon
+                sx={{ fontSize: { sx: "18px", sm: "14px", md: "13px",lg:"17px" } }}
+              />
+              <Typography
+                sx={{
+                  color: "#8c8e8d",
+                  fontSize: { sx: "18px", sm: "14px", md: "13px" ,lg:"17px"},
+                }}
+              >
+                {" "}
+                3 Person
+              </Typography>
             </Grid>
           </Grid>
 
           <Grid
             item
-            sx={{ aspectRatio: 16 / 6, textAlign: "center", p: "0em 1.5em" }}
+            sx={{
+              aspectRatio: {
+                xs: "16/5",
+                sm: "16/8",
+                md: "16 / 10",
+                lg:"16/7",
+                xl: "16/7",
+              },
+              textAlign: "center",
+              justifyContent: "space-between",
+              p: "0em 1.5em",
+            }}
           >
             <Typography variant="h6" mt={3} mb={1} sx={{ fontWeight: "bold" }}>
               {item.title}
