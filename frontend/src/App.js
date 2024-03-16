@@ -7,7 +7,7 @@ import Nav from "./Components/Layout/Nav/Nav";
 
 function App() {
   return (
-    <Grid maxWidth="xl" margin="0px auto" container>
+    <Grid maxWidth="xl" margin="0px auto" container bgcolor="#f6f6f6">
       <Nav />
       <Outlet />
       <Footer />

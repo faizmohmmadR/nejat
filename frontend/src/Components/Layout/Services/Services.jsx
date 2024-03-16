@@ -66,7 +66,7 @@ const testimounalCardStyle = {
   boxShadow: "2px 2px 4px #333",
   borderRadius: "2px",
   padding: "20px",
-  background: "#fcfcfc",
+  background: "white",
   aspectRatio: 16 /10,
 
   "&:hover": {

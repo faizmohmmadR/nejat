@@ -7,6 +7,8 @@ import Contact from "./Components/Layout/Contact/Contact";
 import Login from "./Components/User/Login";
 import Registration from "./Components/User/Registration";
 import Home from "./Components/Layout/Home/Home";
+import NotFound from "./Components/Common/NotFound/NotFound"
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -19,6 +21,7 @@ root.render(
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
+        <Route path="/notfound" element={<NotFound />} />
         <Route path="/home" element={<Home />} />
       </Routes>
     </BrowserRouter>
