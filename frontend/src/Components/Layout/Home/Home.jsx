@@ -4,6 +4,7 @@ import Services from "../Services/Services";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import News from "../News/News";
 import Charts from "../Charts/Charts";
+import { useTranslation } from "react-i18next";
 
 const Home = () => {
   const data = [
@@ -15,6 +16,7 @@ const Home = () => {
     { id: 6, title: "Risk Reduction" },
   ];
 
+  const { t } = useTranslation();
   return (
     <Grid sx={{ margin: "0px auto" }} maxWidth="xl" width={"100%"}>
       <Grid
@@ -33,22 +35,22 @@ const Home = () => {
             color="white"
             sx={{ fontSize: { xs: "40px", md: "70px" } }}
           >
-            Welcome to Nejat
+            {t("welcome")}
           </Typography>
           <Typography
             variant="h4"
             color="white"
-            mt={15}
+            width={"70%"}
+            margin={"0px auto"}
+            mt={5}
             sx={{ fontSize: { xs: "12px", md: "30px" } }}
           >
-            Explore the impact of earthquakes, floods, landslides, and more. Get
-            informed, prepared, and empowered. Join us in building resilience
-            for a safer future.
+            {t("desc")}
           </Typography>
         </Grid>
       </Grid>
       <Grid container justifyContent="center" gap={5} margin={"50px 0px"}>
-        <Grid item lg={12} textAlign={"center"}>
+        <Grid item lg={12} textAlign={"center"} bgcolor={"white"}>
           <Box
             component={"img"}
             src="/img/Nejat.png"
@@ -73,6 +75,7 @@ const Home = () => {
           md={5}
           padding="0px 20px"
           sx={{ aspectRatio: 16 / 14 }}
+          bgcolor={"white"}
         >
           <Grid item xs={12} md={12} textAlign={"center"}>
             <Grid
@@ -197,7 +200,8 @@ const Home = () => {
           <Button
             variant="contained"
             sx={{
-              mt: 3,
+              mt: 4,
+              mb: 2,
               padding: "5px 20px",
               zIndex: 0,
               bgcolor: "#7814c9",
