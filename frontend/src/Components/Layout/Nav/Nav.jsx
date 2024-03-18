@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Button,
   Grid,
@@ -9,13 +9,16 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ClearIcon from "@mui/icons-material/Clear";
+import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import { NavLink } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const navLinkStyle = {
   color: "white",
   fontWeight: "bolder",
   fontSize: "1.5em",
   textDecoration: "none",
+  textTransform: "capitalize",
 };
 
 const MobilenavLinkStyle = {
@@ -25,15 +28,41 @@ const MobilenavLinkStyle = {
   textDecoration: "none",
 };
 
+const Language = [
+  { code: "en", lang: "English" },
+  { code: "fa", lang: "Dari" },
+  { code: "ps", lang: "Pashto" },
+];
+
 const Nav = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [langEl, setLangEl] = useState(null);
+  const [lang, setLang] = useState("English");
+  const { i18n } = useTranslation();
+  const handleOpenLangMenu = (e) => {
+    setLangEl(e.currentTarget);
+  };
 
+  const handleCloseLangMenu = () => {
+    setLangEl(false);
+  };
   const handleOpenMenu = (e) => {
     setAnchorEl(e.currentTarget);
   };
   const handleCloseMenu = () => {
     setAnchorEl(null);
   };
+
+  const handleLanguageSelect = (languageCode) => {
+    i18n.changeLanguage(languageCode);
+    handleCloseLangMenu();
+  };
+
+  useEffect(() => {
+    console.log(i18n.dir());
+    document.body.dir = i18n.dir();
+  }, [i18n, i18n.language]);
+
   return (
     <>
       <Grid
@@ -55,39 +84,78 @@ const Nav = () => {
         </Grid>
         <Grid item sm={7} display="flex" height="10svh">
           <ListItem>
-            <NavLink to="/" style={navLinkStyle}>
-              Home
-            </NavLink>
+            <Button>
+              <NavLink to="/" style={navLinkStyle}>
+                Home
+              </NavLink>
+            </Button>
           </ListItem>
 
           <ListItem color="white">
             {" "}
-            <NavLink to="/about" style={navLinkStyle}>
-              About
-            </NavLink>
+            <Button>
+              <NavLink to="/about" style={navLinkStyle}>
+                About
+              </NavLink>
+            </Button>
           </ListItem>
           <ListItem>
             {" "}
-            <NavLink to="/contact" style={navLinkStyle}>
-              Contact
-            </NavLink>
+            <Button>
+              <NavLink to="/contact" style={navLinkStyle}>
+                Contact
+              </NavLink>
+            </Button>
           </ListItem>
           <ListItem>
             {" "}
-            <NavLink to="/events" style={navLinkStyle}>
-              Events
-            </NavLink>
+            <Button>
+              <NavLink to="/events" style={navLinkStyle}>
+                Events
+              </NavLink>
+            </Button>
           </ListItem>
           <ListItem>
-            {" "}
-            <NavLink style={navLinkStyle}>Services</NavLink>
+            <MenuItem>
+              <Button
+                endIcon={<ArrowDropDownIcon fontSize="2rem" />}
+                style={navLinkStyle}
+                onClick={handleOpenLangMenu}
+              >
+                {lang}
+              </Button>
+              <Menu
+                anchorEl={langEl}
+                open={Boolean(langEl)}
+                onClose={handleCloseLangMenu}
+              >
+                {Language.map((language) => (
+                  <MenuItem
+                    key={language.code}
+                    onClick={(e) => {
+                      setLang(language.lang);
+                      handleLanguageSelect(language.code);
+                    }}
+                  >
+                    {language.lang}
+                  </MenuItem>
+                ))}
+              </Menu>
+            </MenuItem>
+          </ListItem>
+          <ListItem>
+            <Button>
+              <NavLink style={navLinkStyle}>Services</NavLink>
+            </Button>
           </ListItem>
         </Grid>
         <Grid item sm={1} textAlign={"end"}>
           <ListItem>
-            <NavLink style={navLinkStyle} to="/login">
-              Login
-            </NavLink>
+            <Button>
+              <NavLink style={navLinkStyle} to="/login">
+                Login
+              </NavLink>
+            </Button>
           </ListItem>
         </Grid>
       </Grid>
@@ -155,6 +223,8 @@ const Nav = () => {
         >
           {" "}
           <NavLink style={MobilenavLinkStyle} to="/about">
+           
+
             About
           </NavLink>
         </MenuItem>
