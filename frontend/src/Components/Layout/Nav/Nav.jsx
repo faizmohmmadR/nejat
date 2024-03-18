@@ -74,6 +74,12 @@ const Nav = () => {
           </ListItem>
           <ListItem>
             {" "}
+            <NavLink to="/events" style={navLinkStyle}>
+              Events
+            </NavLink>
+          </ListItem>
+          <ListItem>
+            {" "}
             <NavLink style={navLinkStyle}>Services</NavLink>
           </ListItem>
         </Grid>
