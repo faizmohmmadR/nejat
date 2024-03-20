@@ -8,6 +8,7 @@ import Login from "./Components/User/Login";
 import Registration from "./Components/User/Registration";
 import Home from "./Components/Layout/Home/Home";
 import NotFound from "./Components/Common/NotFound/NotFound";
+import Events from "./Components/Events/Events";
 import "./i18n";
 const root = ReactDOM.createRoot(document.getElementById("app"));
 root.render(
@@ -19,6 +20,7 @@ root.render(
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/events" element={<Events />} />
           </Route>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />

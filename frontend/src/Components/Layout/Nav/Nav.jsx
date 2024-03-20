@@ -110,7 +110,9 @@ const Nav = () => {
           <ListItem>
             {" "}
             <Button>
-              <NavLink style={navLinkStyle}>Services</NavLink>
+              <NavLink to="/events" style={navLinkStyle}>
+                Events
+              </NavLink>
             </Button>
           </ListItem>
           <ListItem>
@@ -140,6 +142,11 @@ const Nav = () => {
                 ))}
               </Menu>
             </MenuItem>
+          </ListItem>
+          <ListItem>
+            <Button>
+              <NavLink style={navLinkStyle}>Services</NavLink>
+            </Button>
           </ListItem>
         </Grid>
         <Grid item sm={1} textAlign={"end"}>
@@ -216,6 +223,8 @@ const Nav = () => {
         >
           {" "}
           <NavLink style={MobilenavLinkStyle} to="/about">
+           
+
             About
           </NavLink>
         </MenuItem>
