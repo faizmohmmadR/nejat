@@ -16,7 +16,7 @@ import { useTranslation } from "react-i18next";
 const navLinkStyle = {
   color: "white",
   fontWeight: "bolder",
-  fontSize: "1.5em",
+  fontSize: "1em",
   textDecoration: "none",
   textTransform: "capitalize",
 };
@@ -110,7 +110,9 @@ const Nav = () => {
           <ListItem>
             {" "}
             <Button>
-              <NavLink style={navLinkStyle}>Services</NavLink>
+              <NavLink to="/events" style={navLinkStyle}>
+                Events
+              </NavLink>
             </Button>
           </ListItem>
           <ListItem>
