@@ -11,37 +11,37 @@ import ListItemText from "@mui/material/ListItemText";
 const events = [
   {
     id: 1,
-    img: "../img/d.jpg",
-    title: " Emergency Call",
+    img: "../../../../../static/images/d.jpg",
+    title: "Herat Earthquack",
     disc: " Lorem ipsum dolor, sit amet conlit. Enim eaqueadipisicing elit. Enim eaque",
   },
   {
     id: 1,
-    img: "../img/floot2.jpg",
-    title: "Types of Disaster",
+    img: "../../../../../static/images/floot2.jpg",
+    title: "Farah Flood",
     disc: " nim ueaLit. Enim ueaLit. Enim ueaLit. Enim ueaLit. Enim ueaLit. Enim uea ",
   },
   {
     id: 1,
-    img: "../img/ze.jpg",
-    title: "Hospitals",
+    img: "../../../../../static/images/ze.jpg",
+    title: "Badekhshan Earthquack",
     disc: " Lorem ipsum dolor, sit amet consectetur adipisici eaqueadipisicing elit. Enim eaque",
   },
   {
     id: 1,
-    img: "../img/ze.jpg",
-    title: "Hospitals",
+    img: "../../../../../static/images/ze.jpg",
+    title: "Kabul Earthquack",
     disc: " Lorem ipsum dolor, sit amet consectetur adipisici eaqueadipisicing elit. Enim eaque",
   },
   {
     id: 1,
-    img: "../img/ze.jpg",
-    title: "Hospitals",
+    img: "../../../../../static/images/ze.jpg",
+    title: "Kabul Earthquack",
     disc: " Lorem ipsum dolor, sit amet consectetur adipisici eaqueadipisicing elit. Enim eaque",
   },
   {
     id: 1,
-    img: "../img/fire.jpg",
+    img: "../../../../../static/images/fire.jpg",
     title: "Human Casualties",
     disc: " Lorem ipsum dolor, sit amet c eaqueadipisicing elit. Enim eaque",
   },
@@ -88,7 +88,7 @@ const Events = () => {
             md={12}
             sx={{
               background: (theme) =>
-                `linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10)), url('img/d.jpg')`,
+                `linear-gradient(rgba(0,0,0,0.10), rgba(0,0,0,0.10)), url('../../../../static/images/d.jpg')`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               height: {
@@ -122,7 +122,11 @@ const Events = () => {
             >
               <Typography
                 variant="h3"
-                sx={{ fontWeight: "bold", marginBottom: "1em" ,fontSize: { xs: "16px", sm: "26px",md:"40px" ,xl: "25px" }}}
+                sx={{
+                  fontWeight: "bold",
+                  marginBottom: "1em",
+                  fontSize: { xs: "16px", sm: "26px", md: "40px", xl: "25px" },
+                }}
               >
                 Events
               </Typography>
@@ -130,7 +134,7 @@ const Events = () => {
                 variant="normal"
                 sx={{
                   textTransform: "-moz-initial",
-                  fontSize: { xs: "8px", sm: "14px",md:"20px", xl: "25px" },
+                  fontSize: { xs: "8px", sm: "14px", md: "20px", xl: "25px" },
                 }}
               >
                 Keep tabs on all kinds of current & upcoming natural events that
