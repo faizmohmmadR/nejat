@@ -3,7 +3,7 @@ import { BarChart } from "@mui/x-charts/BarChart";
 import { axisClasses } from "@mui/x-charts";
 import { SparkLineChart } from "@mui/x-charts/SparkLineChart";
 import { Grid, Box, Typography, Divider } from "@mui/material";
-import PieChart1 from "./PieChart";
+import PieClickNoSnap from "./PieChart";
 
 const chartSetting = {
   yAxis: [
@@ -71,6 +71,7 @@ export default function Charts() {
               width: "10%",
               height: { xs: "2vh", md: "3vh" },
               justifyContent: "space-between",
+              alignItems: "center",
               padding: "3px 0",
             }}
           >
@@ -79,15 +80,13 @@ export default function Charts() {
                 width: "30%",
                 height: "2px",
                 background: "#7814c9",
-                marginLeft: "70%",
               }}
             />
             <Divider
               sx={{
-                width: "50%",
+                width: "70%",
                 height: "2px",
                 background: "#7814c9",
-                marginLeft: "50%",
               }}
             />
           </Box>
@@ -110,6 +109,7 @@ export default function Charts() {
               height: { xs: "2vh", md: "3vh" },
               justifyContent: "space-between",
               textAlign: "center",
+              alignItems: "center",
               padding: "3px 0",
             }}
           >
@@ -121,7 +121,7 @@ export default function Charts() {
               }}
             />
             <Divider
-              sx={{ width: "50%", height: "2px", background: "#7814c9" }}
+              sx={{ width: "70%", height: "2px", background: "#7814c9" }}
             />
           </Box>
         </Grid>
@@ -166,14 +166,12 @@ export default function Charts() {
             alignItems: "center",
           }}
         >
-          <PieChart1 />
+          <PieClickNoSnap />
 
           <Typography
             variant="h6"
             ml={3}
-            mb={6}
             lg={4}
-            mt={4}
             sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
           >
             The four provinces that had the most casualties

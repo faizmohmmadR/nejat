@@ -68,6 +68,7 @@ const News = () => {
               width: "10%",
               height: { xs: "2vh", md: "3vh" },
               justifyContent: "space-between",
+              alignItems:"center",
               padding: "3px 0",
             }}
           >
@@ -76,15 +77,15 @@ const News = () => {
                 width: "30%",
                 height: "2px",
                 background: "#7814c9",
-                marginLeft: "70%",
+                
               }}
             />
             <Divider
               sx={{
-                width: "50%",
+                width: "70%",
                 height: "2px",
                 background: "#7814c9",
-                marginLeft: "50%",
+               
               }}
             />
           </Box>
@@ -103,6 +104,7 @@ const News = () => {
               height: { xs: "2vh", md: "3vh" },
               justifyContent: "space-between",
               textAlign: "center",
+              alignItems:"center",
               padding: "3px 0",
             }}
           >
@@ -114,7 +116,7 @@ const News = () => {
               }}
             />
             <Divider
-              sx={{ width: "50%", height: "2px", background: "#7814c9" }}
+              sx={{ width: "70%", height: "2px", background: "#7814c9" }}
             />
           </Box>
         </Grid>
