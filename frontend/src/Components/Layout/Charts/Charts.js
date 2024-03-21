@@ -129,88 +129,91 @@ export default function Charts() {
           Newest Reports
         </Typography>
       </Grid>
-      <Grid item xs={12} md={6} lg={4} textAlign={"center"}>
-        <BarChart
-          dataset={dataset}
-          xAxis={[{ scaleType: "band", dataKey: "province" }]}
-          series={[
-            { dataKey: "floods", label: "Floods", valueFormatter },
-            { dataKey: "earthquack", label: "Earthquack", valueFormatter },
-            { dataKey: "storm", label: "Storm", valueFormatter },
-            { dataKey: "volcano", label: "Volcano", valueFormatter },
-          ]}
-          {...chartSetting}
-        />
-        <Typography
-          variant="h6"
-          ml={3}
-          mb={6}
-          lg={4}
-          mt={4}
-          sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
-          textAlign={"start"}
-        >
-          The number of accidents in different provinces in the previous year
-        </Typography>
-      </Grid>
-      <Grid
-        item
-        xs={12}
-        md={4}
-        mt={5}
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-        }}
-      >
-        <PieChart1 />
-
-        <Typography
-          variant="h6"
-          ml={3}
-          mb={6}
-          lg={4}
-          mt={4}
-          sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
-        >
-          The four provinces that had the most casualties
-        </Typography>
-      </Grid>
-      <Grid item xs={12} md={12} lg={4}>
-        <Box sx={{ flexGrow: 1 }}>
-          <SparkLineChart
-            plotType="bar"
-            data={[1, 4, 2, 5, 7, 2, 4, 6]}
-            height={280}
-            showTooltip
-            showHighlight
-            xAxis={{
-              scaleType: "band",
-              data: [
-                new Date(2016, 0, 1),
-                new Date(2017, 0, 1),
-                new Date(2018, 0, 1),
-                new Date(2019, 0, 1),
-                new Date(2020, 0, 1),
-                new Date(2021, 0, 1),
-                new Date(2022, 0, 1),
-                new Date(2023, 0, 1),
-              ],
-              valueFormatter: (value) => value.getFullYear(),
-            }}
+      <Grid container justifyContent={"space-around"} bgcolor={"white"}>
+        <Grid item xs={12} md={6} lg={4} textAlign={"center"}>
+          <BarChart
+            dataset={dataset}
+            xAxis={[{ scaleType: "band", dataKey: "province" }]}
+            series={[
+              { dataKey: "floods", label: "Floods", valueFormatter },
+              { dataKey: "earthquack", label: "Earthquack", valueFormatter },
+              { dataKey: "storm", label: "Storm", valueFormatter },
+              { dataKey: "volcano", label: "Volcano", valueFormatter },
+            ]}
+            {...chartSetting}
           />
-        </Box>
-        <Typography
-          variant="h6"
-          ml={3}
-          mb={6}
-          lg={4}
-          mt={6}
-          sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+          <Typography
+            variant="h6"
+            ml={3}
+            mb={6}
+            lg={4}
+            mt={4}
+            sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+            textAlign={"start"}
+          >
+            The number of accidents in different provinces in the previous year
+          </Typography>
+        </Grid>
+        <Grid
+          item
+          xs={12}
+          md={4}
+          lg={3}
+          mt={5}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
         >
-          The number of people killed in the year from 2016 to 2023
-        </Typography>
+          <PieChart1 />
+
+          <Typography
+            variant="h6"
+            ml={3}
+            mb={6}
+            lg={4}
+            mt={4}
+            sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+          >
+            The four provinces that had the most casualties
+          </Typography>
+        </Grid>
+        <Grid item xs={12} md={12} lg={4}>
+          <Box sx={{ flexGrow: 1 }}>
+            <SparkLineChart
+              plotType="bar"
+              data={[1, 4, 2, 5, 7, 2, 4, 6]}
+              height={280}
+              showTooltip
+              showHighlight
+              xAxis={{
+                scaleType: "band",
+                data: [
+                  new Date(2016, 0, 1),
+                  new Date(2017, 0, 1),
+                  new Date(2018, 0, 1),
+                  new Date(2019, 0, 1),
+                  new Date(2020, 0, 1),
+                  new Date(2021, 0, 1),
+                  new Date(2022, 0, 1),
+                  new Date(2023, 0, 1),
+                ],
+                valueFormatter: (value) => value.getFullYear(),
+              }}
+            />
+          </Box>
+          <Typography
+            variant="h6"
+            ml={3}
+            mb={6}
+            lg={4}
+            mt={6}
+            sx={{ fontSize: { xs: "14px", sm: "16px", md: "20px" } }}
+          >
+            The number of people killed in the year from 2016 to 2023
+          </Typography>
+        </Grid>
       </Grid>
     </Grid>
   );

@@ -130,11 +130,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-
-# migrations files
-frontend/static/css
-frontend/static/js
-frontend/static/images/
 __pycache__/
 # react
 frontend/node_modules/
