@@ -63,6 +63,8 @@ const Nav = () => {
     document.body.dir = i18n.dir();
   }, [i18n, i18n.language]);
 
+  const { t } = useTranslation();
+
   return (
     <>
       <Grid
@@ -86,7 +88,7 @@ const Nav = () => {
           <ListItem>
             <Button>
               <NavLink to="/" style={navLinkStyle}>
-                Home
+                {t("nav:home")}
               </NavLink>
             </Button>
           </ListItem>
@@ -95,7 +97,7 @@ const Nav = () => {
             {" "}
             <Button>
               <NavLink to="/about" style={navLinkStyle}>
-                About
+                {t("nav:about")}
               </NavLink>
             </Button>
           </ListItem>
@@ -103,7 +105,7 @@ const Nav = () => {
             {" "}
             <Button>
               <NavLink to="/contact" style={navLinkStyle}>
-                Contact
+                {t("nav:contact")}
               </NavLink>
             </Button>
           </ListItem>
@@ -111,7 +113,7 @@ const Nav = () => {
             {" "}
             <Button>
               <NavLink to="/events" style={navLinkStyle}>
-                Events
+                {t("nav:events")}
               </NavLink>
             </Button>
           </ListItem>
@@ -122,7 +124,7 @@ const Nav = () => {
                 style={navLinkStyle}
                 onClick={handleOpenLangMenu}
               >
-                {lang}
+                {t("nav:language")}
               </Button>
               <Menu
                 anchorEl={langEl}
@@ -148,7 +150,7 @@ const Nav = () => {
           <ListItem>
             <Button>
               <NavLink style={navLinkStyle} to="/login">
-                Login
+                {t("nav:login")}
               </NavLink>
             </Button>
           </ListItem>
