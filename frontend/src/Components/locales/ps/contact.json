@@ -1,0 +1,15 @@
+{
+  "title": "زموږ سره اړيکه ونيسۍ",
+  "description": "فورمه ډکه کړئ په ۲۴ ساعتونو کي به زموږ ټیم ستاسو سره اړيکه ونيسي",
+  "firstNameLabel": "نوم",
+  "firstNamePlaceholder": "خپل نوم داخل کړئ",
+  "lastNameLabel": "تخلص",
+  "lastNamePlaceholder": "خپل تخلص داخل کړئ",
+  "emailLabel": "برېښنالیک",
+  "emailPlaceholder": "خپل برېښنالیک داخل کړئ",
+  "phoneLabel": "تیلیفون",
+  "phonePlaceholder": "خبل د تیلیفون شمیره داخل کړئ",
+  "messageLabel": "پیغام",
+  "messagePlaceholder": "خپل پیغام تایپ کړئ",
+  "submitButton": "واستوئ"
+}

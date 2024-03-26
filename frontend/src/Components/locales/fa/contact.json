@@ -1,0 +1,15 @@
+{
+  "title": "تماس با ما",
+  "description": "فرم را پر کنید و تیم ما در عرض ۲۴ ساعت با شما تماس خواهد گرفت.",
+  "firstNameLabel": "نام",
+  "firstNamePlaceholder": "نام خود را وارد کنید",
+  "lastNameLabel": "نام خانوادگی",
+  "lastNamePlaceholder": "نام خانوادگی خود را وارد کنید",
+  "emailLabel": "ایمیل",
+  "emailPlaceholder": "ایمیل خود را وارد کنید",
+  "phoneLabel": "تلفن",
+  "phonePlaceholder": "شماره تلفن خود را وارد کنید",
+  "messageLabel": "پیام",
+  "messagePlaceholder": "پیام خود را تایپ کنید",
+  "submitButton": "ارسال"
+}
