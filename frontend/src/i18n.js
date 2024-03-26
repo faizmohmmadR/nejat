@@ -9,15 +9,16 @@ const resources = {
   en: {
     home: require("./Components/locales/en/home.json"),
     events: require("./Components/locales/en/events.json"),
+    footer: require("./Components/locales/en/footer.json"),
 
   },
   ps: {
     home: require("./Components/locales/ps/home.json"),
-    events: require("./Components/locales/ps/events.json"),
+    footer: require("./Components/locales/ps/footer.json"),
   },
   fa: {
     home: require("./Components/locales/fa/home.json"),
-    events: require("./Components/locales/fa/events.json"),
+    footer: require("./Components/locales/fa/footer.json"),
   },
 };
 
@@ -29,7 +30,7 @@ i18n
     debug: true,
     fallbackLng: "en",
     returnObjects: true,
-    ns: ["home","events"],
+    ns: ["home","events","footer"],
     lng: "en",
     resources,
     interpolation: {
