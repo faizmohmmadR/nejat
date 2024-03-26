@@ -3,6 +3,7 @@ import { Box, Divider, Grid, Typography, Button } from "@mui/material";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import PersonIcon from "@mui/icons-material/Person";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import { useTranslation } from "react-i18next";
 
 const services = [
   {
@@ -57,6 +58,7 @@ const iconStyle = {
 };
 
 const News = () => {
+  const { t } = useTranslation();
   return (
     <Grid container justifyContent={"center"} gap={3} mt={4} mb={7} padding={1}>
       <Grid item xs={12} md={12} textAlign={"center"} mt={6}>
@@ -94,7 +96,7 @@ const News = () => {
             variant="normal"
             sx={{ fontWeight: "bold", margin: "0 0.5em", color: "#7814c9" }}
           >
-            NEWS
+           {t("news:news")}
           </Typography>
           <Box
             sx={{
@@ -121,7 +123,7 @@ const News = () => {
           </Box>
         </Grid>
         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-          Top News
+        {t("news:top_news")}
         </Typography>
       </Grid>
       {services.map((item, i) => (
@@ -238,7 +240,7 @@ const News = () => {
               ":hover": { bgcolor: "#a141f0" },
             }}
           >
-            Read More
+            {t("news:read_more")}
           </Button>
         </Grid>
       ))}
