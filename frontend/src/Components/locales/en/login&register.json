@@ -1,0 +1,35 @@
+{
+    "login_page":"Login",
+    "register_page":"Register Page",
+    "username":"Enter your name",
+    "password":"Enter your password",
+    "conferm_password":"Enter your password again",
+    "email":"Enter your Email",
+    "remember":"Remember Me",
+    "sign_in":"SIGN IN",
+    "des":"If you do not have an account",
+    "des2":"Aliready have account?",
+    "register":"Register Now",
+    "login":"Login Now",
+    "email_req":"Email is required",
+    "email_inv":"Invalid email format",
+
+    "3field_req":"email,password,confirmPassword fields are required",
+    "2field_req":"password and confirmPassword fields are required",
+    "con_pass":"confirmPassword field is required",
+    "register_succes":"You are Register successfully",
+
+    "username_req":"Username is required",
+    "username_low_lenght":"Username must be at least 2 characters long",
+    "username_height_length":"Username must not exceed 20 characters",
+    "username_content":"Username can only contain letters, numbers, and underscores",
+    "all_req":"All fields are required",
+
+    "success":"You are logging in successfully",
+    "password_height_length":"Password must be at most 16 characters long",
+    "password_low_lenght":"Password must be at least 8 characters long",
+    "password_req":"Password is required",
+    "password_mach":"Passwords dose not match",
+    "passworderror": "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
+
+}

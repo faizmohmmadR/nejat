@@ -5,6 +5,7 @@ import EscalatorWarningOutlinedIcon from "@mui/icons-material/EscalatorWarningOu
 import FloodOutlinedIcon from "@mui/icons-material/FloodOutlined";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import LocationCityOutlinedIcon from "@mui/icons-material/LocationCityOutlined";
+import { useTranslation } from "react-i18next";
 
 const iconStyle = {
   fontSize: "50px",
@@ -61,13 +62,12 @@ const services = [
   },
 ];
 
-
 const testimounalCardStyle = {
   boxShadow: "2px 2px 4px #333",
   borderRadius: "2px",
   padding: "20px",
   background: "white",
-  aspectRatio: 16 /10,
+  aspectRatio: 16 / 10,
 
   "&:hover": {
     background: "#563376",
@@ -76,20 +76,19 @@ const testimounalCardStyle = {
 };
 
 const Services = () => {
-
-
+  const { t } = useTranslation();
   return (
     <Grid container justifyContent={"center"} gap={3}>
-      <Grid item xs={12} md={12} textAlign={"center"}mt={6}>
+      <Grid item xs={12} md={12} textAlign={"center"} mt={6}>
         <Grid sx={{ display: "flex", justifyContent: "center", mb: "1em" }}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               width: "10%",
-              height: {xs: "2vh",md: '3vh'},
+              height: { xs: "2vh", md: "3vh" },
               justifyContent: "space-between",
-              alignItems:"center",
+              alignItems: "center",
               padding: "3px 0",
             }}
           >
@@ -98,7 +97,6 @@ const Services = () => {
                 width: "30%",
                 height: "2px",
                 background: "#7814c9",
-                
               }}
             />
             <Divider
@@ -106,7 +104,6 @@ const Services = () => {
                 width: "70%",
                 height: "2px",
                 background: "#7814c9",
-           
               }}
             />
           </Box>
@@ -115,17 +112,17 @@ const Services = () => {
             variant="normal"
             sx={{ fontWeight: "bold", margin: "0 0.5em", color: "#7814c9" }}
           >
-            SERVICES
+          {t("service:service")}
           </Typography>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               width: "10%",
-              height: {xs: "2vh",md: '3vh'},
+              height: { xs: "2vh", md: "3vh" },
               justifyContent: "space-between",
               textAlign: "center",
-              alignItems:"center",
+              alignItems: "center",
               padding: "3px 0",
             }}
           >
@@ -142,11 +139,19 @@ const Services = () => {
           </Box>
         </Grid>
         <Typography variant="h4" sx={{ fontWeight: "bold" }}>
-          Ouer Services
+        {t("service:Ouer_Ser")}
         </Typography>
       </Grid>
-      {services.map((item,i) => (
-        <Grid key={i} item xs={11} sm={5} md={3} lg={2.7}  sx={testimounalCardStyle}>
+      {services.map((item, i) => (
+        <Grid
+          key={i}
+          item
+          xs={11}
+          sm={5}
+          md={3}
+          lg={2.7}
+          sx={testimounalCardStyle}
+        >
           {item.icon}
           <Typography variant="h6" mt={3} mb={1} sx={{ fontWeight: "bold" }}>
             {item.title}

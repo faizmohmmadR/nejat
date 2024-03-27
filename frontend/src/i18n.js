@@ -9,15 +9,24 @@ const resources = {
   en: {
     home: require("./Components/locales/en/home.json"),
     events: require("./Components/locales/en/events.json"),
+    service: require("./Components/locales/en/service.json"),
+    news: require("./Components/locales/en/news.json"),
+    login_Register: require("./Components/locales/en/login&register.json"),
 
   },
   ps: {
     home: require("./Components/locales/ps/home.json"),
     events: require("./Components/locales/ps/events.json"),
+    service: require("./Components/locales/ps/service.json"),
+    news: require("./Components/locales/ps/news.json"),
+    login_Register: require("./Components/locales/ps/login&register.json"),
   },
   fa: {
     home: require("./Components/locales/fa/home.json"),
     events: require("./Components/locales/fa/events.json"),
+    service: require("./Components/locales/fa/service.json"),
+    news: require("./Components/locales/fa/news.json"),
+    login_Register: require("./Components/locales/fa/login&register.json"),
   },
 };
 
@@ -29,7 +38,7 @@ i18n
     debug: true,
     fallbackLng: "en",
     returnObjects: true,
-    ns: ["home","events"],
+    ns: ["home","events","service","news","login_Register"],
     lng: "en",
     resources,
     interpolation: {
