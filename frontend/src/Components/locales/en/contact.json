@@ -1,0 +1,15 @@
+{
+  "title": "Contact Us",
+  "description": "Fill up the form and our team will get back to you within 24 hours.",
+  "firstNameLabel": "First Name",
+  "firstNamePlaceholder": "Enter your firstname",
+  "lastNameLabel": "Last Name",
+  "lastNamePlaceholder": "Enter your Lastname",
+  "emailLabel": "Email",
+  "emailPlaceholder": "Enter your Email",
+  "phoneLabel": "Phone",
+  "phonePlaceholder": "Enter your Phone Number",
+  "messageLabel": "Message",
+  "messagePlaceholder": "Type your Message",
+  "submitButton": "Submit"
+}

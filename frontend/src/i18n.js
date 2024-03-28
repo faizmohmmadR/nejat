@@ -7,6 +7,7 @@ const resources = {
   en: {
     home: require("./Components/locales/en/home.json"),
     events: require("./Components/locales/en/events.json"),
+    contact: require("./Components/locales/en/contact.json"),
     nav: require("./Components/locales/en/nav.json"),
     service: require("./Components/locales/en/service.json"),
     news: require("./Components/locales/en/news.json"),
@@ -16,6 +17,7 @@ const resources = {
   ps: {
     home: require("./Components/locales/ps/home.json"),
     events: require("./Components/locales/ps/events.json"),
+    contact: require("./Components/locales/ps/contact.json"),
     nav: require("./Components/locales/ps/nav.json"),
     service: require("./Components/locales/ps/service.json"),
     news: require("./Components/locales/ps/news.json"),
@@ -25,6 +27,7 @@ const resources = {
   fa: {
     home: require("./Components/locales/fa/home.json"),
     events: require("./Components/locales/fa/events.json"),
+    contact: require("./Components/locales/fa/contact.json"),
     nav: require("./Components/locales/fa/nav.json"),
     service: require("./Components/locales/fa/service.json"),
     news: require("./Components/locales/fa/news.json"),
@@ -41,8 +44,15 @@ i18n
     debug: true,
     fallbackLng: "en",
     returnObjects: true,
-    ns: ["home", "events", "nav"],
-    ns: ["home", "events", "service", "news", "login_Register", "footer"],
+    ns: [
+      "home",
+      "events",
+      "service",
+      "news",
+      "login_Register",
+      "footer",
+      "contact",
+    ],
     lng: "en",
     resources,
     interpolation: {

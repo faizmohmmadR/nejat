@@ -1,7 +1,9 @@
 import { Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const Contact = () => {
+  const { t } = useTranslation();
   return (
     <Grid
       container
@@ -34,7 +36,7 @@ const Contact = () => {
           variant="h5"
           style={{ textAlign: "center", padding: "0px 10px" }}
         >
-          Contact Us
+          {t("contact:title")}
         </Typography>
         <Typography
           variant="body2"
@@ -43,14 +45,14 @@ const Contact = () => {
           component="p"
           mt={3}
         >
-          Fill up the form and our team will get back to you within 24 hours.
+          {t("contact:description")}
         </Typography>
         <form action="">
           <Grid container spacing={1}>
             <Grid item xs={12} sm={6}>
               <TextField
-                label="First Name"
-                placeholder="Enter your firstname"
+                label={t("contact:firstNameLabel")}
+                placeholder={t("contact:firstNamePlaceholder")}
                 variant="outlined"
                 fullWidth
                 required
@@ -58,8 +60,8 @@ const Contact = () => {
             </Grid>
             <Grid item xs={12} sm={6}>
               <TextField
-                label="Last Name"
-                placeholder="Enter your Lastname"
+                label={t("contact:lastNameLabel")}
+                placeholder={t("contact:lastNamePlaceholder")}
                 variant="outlined"
                 fullWidth
                 required
@@ -67,8 +69,8 @@ const Contact = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                label="Email"
-                placeholder="Enter your Email"
+                label={t("contact:emailLabel")}
+                placeholder={t("contact:emailPlaceholder")}
                 variant="outlined"
                 type="email"
                 fullWidth
@@ -77,8 +79,8 @@ const Contact = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                label="Phone"
-                placeholder="Enter your Phone Number"
+                label={t("contact:phoneLabel")}
+                placeholder={t("contact:phonePlaceholder")}
                 variant="outlined"
                 type="phone"
                 fullWidth
@@ -87,8 +89,8 @@ const Contact = () => {
             </Grid>
             <Grid item xs={12}>
               <TextField
-                label="Message"
-                placeholder="Type your Message"
+                label={t("contact:messageLabel")}
+                placeholder={t("contact:messagePlaceholder")}
                 variant="outlined"
                 type="message"
                 multiline
@@ -104,7 +106,7 @@ const Contact = () => {
                 type="submit"
                 sx={{ mb: 3 }}
               >
-                Submit
+                {t("contact:submitButton")}
               </Button>
             </Grid>
           </Grid>
