@@ -118,6 +118,14 @@ const Nav = () => {
             </Button>
           </ListItem>
           <ListItem>
+            {" "}
+            <Button>
+              <NavLink to="/information" style={navLinkStyle}>
+                Information
+              </NavLink>
+            </Button>
+          </ListItem>
+          <ListItem>
             <MenuItem>
               <Button
                 endIcon={<ArrowDropDownIcon fontSize="2rem" />}

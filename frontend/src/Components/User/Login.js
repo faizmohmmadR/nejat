@@ -9,13 +9,14 @@ import {
   Checkbox,
   Grid,
   Paper,
-  Link,
   TextField,
   Typography,
   InputAdornment,
   IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setusername] = useState();
@@ -30,17 +31,15 @@ const Login = () => {
   const [success, setSuccess] = useState();
 
   const handleUsername = () => {
-    const usernameRegex = /^[a-zA-Z0-9_]+$/;
+    const usernameRegex = /^[a-zA-Z0-9_\u0600-\u06FF\s]+$/;
     if (!username) {
-      setusernamError("Username is required");
+      setusernamError(t("login_Register:username_req"));
     } else if (username.length < 2) {
-      setusernamError("Username must be at least 5 characters long");
+      setusernamError(t("login_Register:username_low_lenght"));
     } else if (username.length > 20) {
-      setusernamError("Username must not exceed 20 characters");
+      setusernamError(t("login_Register:username_height_length"));
     } else if (!username.match(usernameRegex)) {
-      setusernamError(
-        "Username can only contain letters, numbers, and underscores"
-      );
+      setusernamError(t("login_Register:username_content"));
     } else {
       setusernamError(false);
       setpasswordError(false);
@@ -48,27 +47,25 @@ const Login = () => {
   };
   const handlePassword = () => {
     const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+      /^(?=.*[a-zA-Z\u0600-\u06FF])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\u0600-\u06FF\d@$!%*?&]{8,20}$/;
 
     if (!password) {
-      setpasswordError("Password is required");
+      setpasswordError(t("login_Register:password_req"));
       return;
     }
 
     if (password.length < 8) {
-      setpasswordError("Password must be at least 8 characters long");
+      setpasswordError(t("login_Register:password_low_lenght"));
       return;
     }
 
     if (password.length > 16) {
-      setpasswordError("Password must be at most 20 characters long");
+      setpasswordError(t("login_Register:password_height_length"));
       return;
     }
 
     if (!password.match(passwordRegex)) {
-      setpasswordError(
-        "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
-      );
+      setpasswordError(t("login_Register:passworderror"));
       return;
     }
 
@@ -79,12 +76,12 @@ const Login = () => {
     e.preventDefault();
     setSuccess(null);
     if (!username && !password) {
-      setFormValid("All fields are required");
+      setFormValid(t("login_Register:all_req"));
       return;
     }
 
     if (!username && password) {
-      setFormValid("User name is required");
+      setFormValid(t("login_Register:username_req"));
       return;
     }
 
@@ -98,11 +95,12 @@ const Login = () => {
     }
 
     setFormValid(null);
-    setSuccess("You are logging in successfully");
+    setSuccess(t("login_Register:success"));
     console.log("User name: " + username);
     console.log("Password: " + password);
     console.log("Remember User: " + rememberMe);
   };
+  const { t } = useTranslation();
 
   return (
     <Grid
@@ -115,14 +113,14 @@ const Login = () => {
           <Grid textAlign={"center"}>
             <Avatar sx={{ margin: "0px auto" }} />
             <Typography variant="h5" mt={1}>
-              Login Page
+              {t("login_Register:login_page")}
             </Typography>
           </Grid>
           <Grid component="form" id="loginForm">
             <TextField
               label="UserName"
               id="username"
-              placeholder="Enter username"
+              placeholder={t("login_Register:username")}
               variant="standard"
               margin="normal"
               fullWidth
@@ -135,7 +133,7 @@ const Login = () => {
             />
             <TextField
               label="password"
-              placeholder="Enter your password"
+              placeholder={t("login_Register:password")}
               variant="standard"
               type={showPassword ? "text" : "password"}
               fullWidth
@@ -166,7 +164,7 @@ const Login = () => {
                 inputProps={{ "aria-label": "controlled" }}
                 id="rememberMe"
               />
-              Remember Me
+              {t("login_Register:remember")}
             </Typography>
             <Button
               type="submit"
@@ -176,7 +174,7 @@ const Login = () => {
               fullWidth
               onClick={handleSubmit}
             >
-              Sign in
+              {t("login_Register:sign_in")}
               <LoginIcon />
             </Button>
             <Typography mt={1}>
@@ -193,11 +191,11 @@ const Login = () => {
                 </Typography>
               )}
             </Typography>
-            <Grid>
-              <Typography textAlign={"center"} sx={{ mt: "10px" }}>
-                Do you don't have account{" "}
-                <Link rel="stylesheet" href="/register">
-                  Register Now
+            <Grid container sx={{ justifyContent: "center" }}>
+              <Typography>{t("login_Register:des")}</Typography>
+              <Typography sx={{ m: "0px 10px" }}>
+                <Link rel="stylesheet" to="/register">
+                  {t("login_Register:register")}
                 </Link>
               </Typography>
             </Grid>
