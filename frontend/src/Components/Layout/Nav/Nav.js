@@ -30,8 +30,8 @@ const MobilenavLinkStyle = {
 
 const Language = [
   { code: "en", lang: "English" },
-  { code: "fa", lang: "Dari" },
-  { code: "ps", lang: "Pashto" },
+  { code: "fa", lang: "دری" },
+  { code: "ps", lang: "پشتو" },
 ];
 
 const Nav = () => {
@@ -121,7 +121,7 @@ const Nav = () => {
             {" "}
             <Button>
               <NavLink to="/information" style={navLinkStyle}>
-                Information
+                {t("nav:info")}
               </NavLink>
             </Button>
           </ListItem>
@@ -146,6 +146,7 @@ const Nav = () => {
                       setLang(language.lang);
                       handleLanguageSelect(language.code);
                     }}
+                    sx={{ width: "15vw" }}
                   >
                     {language.lang}
                   </MenuItem>
@@ -216,7 +217,7 @@ const Nav = () => {
         >
           {" "}
           <NavLink style={MobilenavLinkStyle} to="/">
-            Home
+            {t("nav:home")}
           </NavLink>
         </MenuItem>
 
@@ -228,7 +229,7 @@ const Nav = () => {
         >
           {" "}
           <NavLink style={MobilenavLinkStyle} to="/about">
-            About
+            {t("nav:about")}
           </NavLink>
         </MenuItem>
 
@@ -240,20 +241,44 @@ const Nav = () => {
         >
           {" "}
           <NavLink style={MobilenavLinkStyle} to="/contact">
-            Contact
+            {t("nav:contact")}
+          </NavLink>
+        </MenuItem>
+        <MenuItem>
+          {" "}
+          <NavLink to="/information" style={MobilenavLinkStyle}>
+            {t("nav:info")}
           </NavLink>
         </MenuItem>
 
-        <MenuItem
-          onClick={() => {
-            handleCloseMenu();
-          }}
-          sx={{ width: "100vw" }}
-        >
-          {" "}
-          <NavLink style={MobilenavLinkStyle}>Services</NavLink>
+        <MenuItem>
+          <Button
+            endIcon={<ArrowDropDownIcon fontSize="2rem" />}
+            style={MobilenavLinkStyle}
+            sx={{ textTransform: "capitalize" }}
+            onClick={handleOpenLangMenu}
+          >
+            {t("nav:language")}
+          </Button>
+          <Menu
+            anchorEl={langEl}
+            open={Boolean(langEl)}
+            onClose={handleCloseLangMenu}
+          >
+            {Language.map((language) => (
+              <MenuItem
+                key={language.code}
+                onClick={(e) => {
+                  setLang(language.lang);
+                  handleLanguageSelect(language.code);
+                }}
+                sx={{ width: "30vw" }}
+              >
+                {language.lang}
+              </MenuItem>
+            ))}
+          </Menu>
         </MenuItem>
-
         <MenuItem
           onClick={() => {
             handleCloseMenu();
@@ -261,7 +286,7 @@ const Nav = () => {
           sx={{ width: "100vw" }}
         >
           <NavLink style={MobilenavLinkStyle} to="/login">
-            Login
+            {t("nav:login")}
           </NavLink>
         </MenuItem>
       </Menu>
