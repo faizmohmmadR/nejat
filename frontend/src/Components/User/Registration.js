@@ -9,12 +9,13 @@ import {
   Avatar,
   Typography,
   TextField,
-  Link,
   Button,
   InputAdornment,
   IconButton,
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
+import { useTranslation } from "react-i18next";
+import {Link} from 'react-router-dom'
 
 const Login = () => {
   const [username, setusername] = useState();
@@ -33,17 +34,15 @@ const Login = () => {
   const [success, setSuccess] = useState();
 
   const handleUsername = () => {
-    const usernameRegex = /^[a-zA-Z0-9_]+$/;
+    const usernameRegex = /^[a-zA-Z0-9_\u0600-\u06FF\s]+$/;
     if (!username) {
-      setusernamError("Username is required");
+      setusernamError(t("login_Register:username_req"));
     } else if (username.length < 2) {
-      setusernamError("Username must be at least 5 characters long");
+      setusernamError(t("login_Register:username_low_lenght"));
     } else if (username.length > 20) {
-      setusernamError("Username must not exceed 20 characters");
+      setusernamError(t("login_Register:username_height_length"));
     } else if (!username.match(usernameRegex)) {
-      setusernamError(
-        "Username can only contain letters, numbers, and underscores"
-      );
+      setusernamError(t("login_Register:username_content"));
     } else {
       setusernamError(false);
       setpasswordError(false);
@@ -53,12 +52,13 @@ const Login = () => {
   const handleEmail = () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.(com)$/;
     if (!email) {
-      setEmailError("Email is required");
+      setEmailError(t("login_Register:email_req"));
+      
       return;
     }
 
     if (!email.match(emailRegex)) {
-      setEmailError("Invalid email format");
+      setEmailError(t("login_Register:email_inv"));
       return;
     }
 
@@ -66,27 +66,25 @@ const Login = () => {
   };
   const handlePassword = () => {
     const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,20}$/;
+    /^(?=.*[a-zA-Z\u0600-\u06FF])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\u0600-\u06FF\d@$!%*?&]{8,20}$/;
 
     if (!password) {
-      setpasswordError("Password is required");
+      setpasswordError(t("login_Register:password_req"));
       return;
     }
 
     if (password.length < 8) {
-      setpasswordError("Password must be at least 8 characters long");
+      setpasswordError(t("login_Register:password_low_lenght"));
       return;
     }
 
     if (password.length > 16) {
-      setpasswordError("Password must be at most 20 characters long");
+      setpasswordError(t("login_Register:password_height_length"));
       return;
     }
 
     if (!password.match(passwordRegex)) {
-      setpasswordError(
-        "Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character"
-      );
+      setpasswordError(t("login_Register:passworderror"));
       return;
     }
 
@@ -94,7 +92,7 @@ const Login = () => {
   };
   const handleConfirmPassword = () => {
     if (confirmPassword !== password) {
-      setConfirmPasswordError("Passwords dose not match");
+      setConfirmPasswordError(t('login_Register:password_mach'));
       return;
     }
 
@@ -106,19 +104,19 @@ const Login = () => {
     setSuccess(null);
 
     if (!username && !email && !password && !confirmPassword) {
-      setFormValid("All fields are required");
+      setFormValid(t("login_Register:all_req"));
       return;
     }
     if (username && !email && !password && !confirmPassword) {
-      setFormValid("email,password,confirmPassword fields are required");
+      setFormValid(t("login_Register:3field_req"));
       return;
     }
     if (username && email && !password && !confirmPassword) {
-      setFormValid("password and confirmPassword fields are required");
+      setFormValid(t("login_Register:2field_req"));
       return;
     }
     if (username && email && password && !confirmPassword) {
-      setFormValid("confirmPassword field is required");
+      setFormValid(t("login_Register:con_pass"));
       return;
     }
 
@@ -135,13 +133,14 @@ const Login = () => {
       return;
     }
     if (password !== confirmPassword) {
-      setFormValid("Passwords dose not match");
+      setFormValid(t('login_Register:password_mach'));
       return;
     }
 
     setFormValid(null);
     setSuccess("You are Register successfully");
   };
+  const { t } = useTranslation();
 
   return (
     <Grid
@@ -154,7 +153,7 @@ const Login = () => {
           <Grid textAlign={"center"}>
             <Avatar sx={{ margin: "0px auto", marginTop: "1em" }} />
             <Typography variant="h5" pt={2}>
-              User Register
+              {t("login_Register:register_page")}
             </Typography>
           </Grid>
           <Grid component="form">
@@ -163,7 +162,7 @@ const Login = () => {
                 {" "}
                 <TextField
                   label="UserName"
-                  placeholder="Enter username"
+                  placeholder={t("login_Register:username")}
                   variant="standard"
                   margin="normal"
                   fullWidth
@@ -177,7 +176,7 @@ const Login = () => {
                 />
                 <TextField
                   label="Email"
-                  placeholder="Enter your Email"
+                  placeholder={t("login_Register:email")}
                   variant="standard"
                   type="email"
                   fullWidth
@@ -195,7 +194,7 @@ const Login = () => {
               <Grid item md={6}>
                 <TextField
                   label="password"
-                  placeholder="Enter your password"
+                  placeholder={t("login_Register:password")}
                   variant="standard"
                   type={showPassword ? "text" : "password"}
                   fullWidth
@@ -222,7 +221,7 @@ const Login = () => {
                 />
                 <TextField
                   label="Confirm Password"
-                  placeholder="Enter your password again"
+                  placeholder={t("login_Register:conferm_password")}
                   variant="standard"
                   type={showConfirmPassword ? "text" : "password"}
                   fullWidth
@@ -263,7 +262,7 @@ const Login = () => {
               fullWidth
               onClick={handleSubmit}
             >
-              Register <HowToRegIcon />
+              {t("login_Register:register")} <HowToRegIcon />
             </Button>
             <Typography mt={1}>
               {formValid && (
@@ -279,11 +278,13 @@ const Login = () => {
                 </Typography>
               )}
             </Typography>
-            <Grid>
-              <Typography textAlign={"center"} sx={{ mt: "10px" }}>
-                Aliready have account?{" "}
-                <Link rel="stylesheet" href="/login">
-                  Login Now
+            <Grid container  sx={{ justifyContent:"center" }}>
+              <Typography >
+                {t("login_Register:des2")}{" "}
+              </Typography>
+              <Typography sx={{m:"0px 10px"}}>
+              <Link rel="stylesheet" to="/login">
+                  {t("login_Register:login")}
                 </Link>
               </Typography>
             </Grid>

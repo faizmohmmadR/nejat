@@ -7,6 +7,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import { useTranslation } from "react-i18next";
+ 
 const events = [
   {
     id: 1,
@@ -48,7 +49,7 @@ const events = [
 const provinces = [
   {
     id: 2,
-    provinces: "Kabul",
+    provinces:"Kabul",
   },
   {
     id: 2,
