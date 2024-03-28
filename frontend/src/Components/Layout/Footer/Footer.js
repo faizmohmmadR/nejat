@@ -6,8 +6,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CopyrightIcon from "@mui/icons-material/Copyright";
-import { Link } from "react-router-dom";
-
+import Link from "@mui/material/Link";
+import { useTranslation } from "react-i18next";
 const Footer = () => {
   const TitleStyle = {
     color: "#102354",
@@ -25,12 +25,9 @@ const Footer = () => {
   const ElementStyle = {
     color: "#263d78",
     fontFamily: "serif",
-    textDecoration: "none",
-
     fontSize: "15px",
     "&:hover": {
-      textDecoration: "underline",
-      color: "blue",
+      color: "white",
     },
   };
   const IconStyle = {
@@ -51,6 +48,7 @@ const Footer = () => {
       textDecoration: "underline",
     },
   };
+  const { t } = useTranslation();
   return (
     <Grid
       position={"relative"}
@@ -77,57 +75,88 @@ const Footer = () => {
         sx={{ padding: "2em" }}
       >
         <Grid item xs={12} sm={5.8} md={2.8}>
-          <Typography style={TitleStyle}>About Us</Typography>
+          <Typography style={TitleStyle}>{t("footer:link")}</Typography>
           <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>Go to About Page</Link>
-            <Link style={ElementStyle}>Mission, Impact, and History</Link>
-            <Link style={ElementStyle}>Our Leadership</Link>
-            <Link style={ElementStyle}>In the news</Link>
-            <Link style={ElementStyle}>Careers</Link>
-            <Link style={ElementStyle}>Financial Statment</Link>
-          </Typography>
-          <Typography style={TitleStyle}>For Media</Typography>
-          <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>Media Export</Link>
-            <Link style={ElementStyle}>Press Releases</Link>
-          </Typography>
-        </Grid>
-        <Grid item xs={12} sm={5.8} md={2.9}>
-          <Typography style={TitleStyle}>Get Involoved</Typography>
-          <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>Event</Link>
-            <Link style={ElementStyle}>Volunteer</Link>
-            <Link style={ElementStyle}>Ways to Give</Link>
-            <Link style={ElementStyle}>Become and Advosate</Link>
-            <Link style={ElementStyle}>Share Your Story</Link>
-            <Link style={ElementStyle}>Sponsors & Supporters</Link>
-          </Typography>
-          <Typography style={TitleStyle}>Resources</Typography>
-          <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>Go to About Page</Link>
-            <Link style={ElementStyle}>Go to About Page</Link>
+            <Link href="../Home" style={ElementStyle}>
+              {t("footer:home")}
+            </Link>
+            <Link href="../Contact" style={ElementStyle}>
+              {t("footer:contact")}
+            </Link>
+            <Link href="../About" style={ElementStyle}>
+              {t("footer:about")}
+            </Link>
+            <Link href="../../Events" style={ElementStyle}>
+              {t("footer:event")}
+            </Link>
+            <Link href="../../Information" style={ElementStyle}>
+              {t("footer:information")}
+            </Link>
           </Typography>
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
-          <Typography style={TitleStyle}>Signature Reports</Typography>
-          <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>State of the Air</Link>
-            <Link style={ElementStyle}>State of Lung Concer Report</Link>
-            <Link style={ElementStyle}>State of Tobacco Control</Link>
+          <Typography style={TitleStyle}>
+            {t("footer:organizations")}
           </Typography>
-          <Typography style={TitleStyle}>Contact Us</Typography>
           <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>Go to About Page</Link>
-            <Link style={ElementStyle}>Go to About Page</Link>
-          </Typography>
-          <Typography style={TitleStyle}>Professional Education</Typography>
-          <Typography style={ContentStyle}>
-            <Link style={ElementStyle}>Go to About Page</Link>
-            <Link style={ElementStyle}>Go to About Page</Link>
+            <Link href="https://dmac.gov.af/da/andma/" style={ElementStyle}>
+              {t("footer:org1")}
+            </Link>
+
+            <Link href="https://www.andma.gov.af/dr" style={ElementStyle}>
+              {t("footer:org2")}
+            </Link>
+            <Link
+              href="https://www.arcs.af/en/disaster-management"
+              style={ElementStyle}
+            >
+              {t("footer:org3")}
+            </Link>
+            <Link href=" https://www.moph.gov.af/" style={ElementStyle}>
+              {t("footer:org4")}
+            </Link>
           </Typography>
         </Grid>
         <Grid item xs={12} sm={5.8} md={2.9}>
-          <Typography style={TitleStyle}>Commeing soon on</Typography>
+          <Typography style={TitleStyle}>{t("footer:contact_us")}</Typography>
+          <Typography style={ContentStyle}>
+            <Link
+              href="https://www.google.com/maps/place/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%DB%81+%D9%82%D9%86%D8%AF%DA%BE%D8%A7%D8%B1%E2%80%AD/@31.6322813,65.6999118,17z/data=!4m14!1m7!3m6!1s0x3ed671899cf34771:0x2946be6523a86c78!2z2K_Yp9mG2LTar9in24Eg2YLZhtiv2r7Yp9ix!8m2!3d31.6322768!4d65.6973369!16s%2Fm%2F02wxhcq!3m5!1s0x3ed671899cf34771:0x2946be6523a86c78!8m2!3d31.6322768!4d65.6973369!16s%2Fm%2F02wxhcq?authuser=0&entry=ttu"
+              style={ElementStyle}
+            >
+              {t("footer:location")}
+            </Link>
+            <Link href="../Contact" style={ElementStyle}>
+              {t("footer:message")}
+            </Link>
+          </Typography>
+          <Typography style={TitleStyle}>
+            {t("footer:other_sources")}
+          </Typography>
+          <Typography style={ContentStyle}>
+            <Link
+              href=" https://help.unhcr.org/ecuador/fa/que-hacer-en-caso-de-desastres-naturales/"
+              style={ElementStyle}
+            >
+              {t("footer:sour1")}
+            </Link>
+            <Link
+              href="https://afghanistankomiteen.no/wp-content/uploads/2020/12/Guideline-for-preparing-communities-against-natural-disasters-.pdf"
+              style={ElementStyle}
+            >
+              {t("footer:sour2")}
+            </Link>
+            <Link
+              href=" https://www.infomigrants.net/prs/tag/%D8%AD%D9%88%D8%A7%D8%AF%D8%AB%20%D8%B7%D8%A8%DB%8C%D8%B9%DB%8C/"
+              style={ElementStyle}
+            >
+              {t("footer:sour3")}
+            </Link>
+           
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sm={5.8} md={2.9}>
+          <Typography style={TitleStyle}>{t("footer:follow")}</Typography>
           <Grid sx={{ mt: "1em", ml: "1em", display: "flex" }}>
             <Link>
               <Avatar sx={IconStyle}>
