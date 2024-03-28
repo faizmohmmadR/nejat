@@ -11,7 +11,7 @@ const resources = {
     service: require("./Components/locales/en/service.json"),
     news: require("./Components/locales/en/news.json"),
     login_Register: require("./Components/locales/en/login&register.json"),
-
+    footer: require("./Components/locales/en/footer.json"),
   },
   ps: {
     home: require("./Components/locales/ps/home.json"),
@@ -20,6 +20,7 @@ const resources = {
     service: require("./Components/locales/ps/service.json"),
     news: require("./Components/locales/ps/news.json"),
     login_Register: require("./Components/locales/ps/login&register.json"),
+    footer: require("./Components/locales/ps/footer.json"),
   },
   fa: {
     home: require("./Components/locales/fa/home.json"),
@@ -28,6 +29,7 @@ const resources = {
     service: require("./Components/locales/fa/service.json"),
     news: require("./Components/locales/fa/news.json"),
     login_Register: require("./Components/locales/fa/login&register.json"),
+    footer: require("./Components/locales/fa/footer.json"),
   },
 };
 
@@ -40,7 +42,7 @@ i18n
     fallbackLng: "en",
     returnObjects: true,
     ns: ["home", "events", "nav"],
-    ns: ["home","events","service","news","login_Register"],
+    ns: ["home", "events", "service", "news", "login_Register", "footer"],
     lng: "en",
     resources,
     interpolation: {
